@@ -2,9 +2,11 @@ import './App.css';
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill } from "react-icons/pi";
-import { IoIosMail } from "react-icons/io";
-import React from "react";
-import AnimatedCursor from "react-animated-cursor"
+import { IoIosMail} from "react-icons/io";
+import { FaArrowDownLong } from "react-icons/fa6";  
+import React, {useState} from "react";
+import AnimatedCursor from "react-animated-cursor";
+
 
 
 //cursor//
@@ -42,13 +44,13 @@ function Cursor() {
 }
 
 //nav//
-function Nav() {
+function Nav({ toggleTheme })  {
   return (
     <nav id="desktop-nav">
       <ul class="nav-links">
         <li ><a href="#projects"><button>Projects</button></a></li>
         <li><a href="#contact"><button>Contact</button></a></li>
-        <li><button className="mode"><FaMoon />
+        <li><button className="mode" onClick={toggleTheme}><FaMoon />
         </button></li>
       </ul>
     </nav>
@@ -87,7 +89,7 @@ function Profile() {
         </h1>
       </div>
       <div className="time">
-        <div className="arrow">&#10140;</div>
+        <div className="arrow"><a href='#projects'><FaArrowDownLong /></a></div>
         <div id="clock">{getTime()}</div>
       </div>
     </section>
@@ -244,16 +246,21 @@ function Footer() {
 }
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDark(prev => !prev);
+  };
   return (
-    <>
+    <div data-theme={isDark ? "dark" : "light"} className='app'>
       <Cursor />
-      <Nav />
+      <Nav toggleTheme={toggleTheme} />
       <Profile />
       <Projects />
       <Stacks />
       <Contact />
       <Footer />
-    </>
+    </div>
   )
 }
 

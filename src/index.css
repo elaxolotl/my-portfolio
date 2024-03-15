@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap');
 
+/*dark & light modes*/
+
+:root {
+  --gray0: #E5E4DF;
+  --gray1: rgb(188, 188, 188, 0.4);
+  --gray2: rgba(82, 82, 82, 0.4);
+  --gray3: #1A1917;
+}
+
+[data-theme="light"] {
+  --bg: var(--gray0);
+  --text: var(--gray3);
+  --cursor: var(--gray2);
+}
+
+[data-theme="dark"] {
+  --bg: var(--gray3);
+  --text: var(--gray0);
+  --cursor: var(--gray1);
+  --gradient: var(--gray2);
+}
+
 /*general styling*/
 
 * {
@@ -7,11 +29,11 @@
   padding: 0;
 }
 
-body {
-  background: linear-gradient(#1B1B1B, #26292B);
-  background-size: contain;
+.app {
+  background-color: var(--bg);
   font-family: 'Rethink Sans', sans-serif;
   transition: 0.3s;
+  height: auto;
 }
 
 html {
@@ -20,7 +42,7 @@ html {
 
 a {
   text-decoration: none;
-  color: aliceblue;
+  color: var(--text);
 }
 
 #paragraph {
@@ -32,12 +54,12 @@ a {
   text-decoration: underline;
   text-underline-offset: 12px;
   transition: 0.3s;
-  text-decoration-color: rgb(189, 189, 189);
+  text-decoration-color: var(--cursor);
   cursor: pointer;
 }
 
 #underlined-element:hover {
-  text-decoration-color: white;
+  text-decoration-color: var(--text);
 }
 
 /*cursor*/
@@ -66,8 +88,9 @@ a {
 /*nav*/
 
 nav {
+  padding-top: 5vh;
     justify-content: space-between;
-    margin: 5vh 15vh 0vh 15vh;
+    margin: 0vh 15vh 0vh 15vh;
     align-items: center;
     height: 17vh;
     li{
@@ -82,14 +105,14 @@ nav {
       font-size: 20px;
       transition: 0.5s;
       border: none;
-      background-color: white;
-      color: #1B1B1B;
+      background-color: var(--text);
+      color: var(--bg);
     }
     button:hover {
-      color: white;
+      color: var(--text);
       background-color: transparent;
       cursor: pointer;
-      border: solid 1px white;
+      border: solid 1px var(--text);
     }
 }
 
@@ -98,7 +121,7 @@ nav {
 
 #profile {
   margin: 7vh 15vh 0vh 15vh;
-  color: aliceblue;
+  color: var(--text);
 
   img {
     width: auto;
@@ -128,7 +151,7 @@ nav {
   }
 
   .arrow {
-    transform: rotate(90deg);
+    color: var(--text);
   }
 
 
@@ -138,7 +161,7 @@ nav {
 
 #projects {
   margin: 0vh 15vh 0vh 15vh;
-  color: aliceblue;
+  color: var(--text);
 
   h1 {
     margin-top: 4vh;
@@ -179,8 +202,8 @@ nav {
       }
 
       .projects-text{
-        background-color: #D9D9D9;
-        color: #1B1B1B;
+        background-color: rgb(212, 212, 212);
+        color: var(--gray3);
         width: 45vh;
         text-align: center;
       }
@@ -223,7 +246,7 @@ nav {
 
 #stacks{
   margin: 7vh 15vh 10vh 15vh;
-  color: aliceblue;
+  color: var(--text);
   .icons{
     display: flex;
   }
@@ -241,7 +264,7 @@ nav {
 
 #contact{
   margin: 15vh 15vh 7vh 15vh;
-  color: aliceblue;
+  color: var(--text);
   h3{
     margin-bottom: 30px;
   }
@@ -258,9 +281,10 @@ nav {
 /*footer*/
 
 .footer {
-  color: white;
+  color: var(--text);
   animation: section-load 0.7s ease-out;
-  margin: 15vh 7vh 3vh 7vh;
+  margin: 15vh 7vh 0vh 7vh;
+  padding-bottom: 3vh;
   display: flex;
   justify-content: space-between;
   a {
