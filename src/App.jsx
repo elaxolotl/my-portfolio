@@ -1,4 +1,59 @@
-import './App.css'
+import './App.css';
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { PiFileSqlFill } from "react-icons/pi";
+import { IoIosMail } from "react-icons/io";
+import React from "react";
+import AnimatedCursor from "react-animated-cursor"
+
+
+//cursor//
+
+function Cursor() {
+  return (
+    <div className="App">
+      <AnimatedCursor
+        innerSize={0}
+        outerSize={50}
+        outerAlpha={0.2}
+        outerScale={1.7}
+        outerStyle={{
+          backgroundColor: "transparent",
+          border: "solid 4px gray"
+        }}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link',
+          '#underlined-element'
+        ]}
+        showSystemCursor={true}
+      />
+    </div>
+  );
+}
+
+//nav//
+function Nav() {
+  return (
+    <nav id="desktop-nav">
+      <ul class="nav-links">
+        <li ><a href="#projects"><button>Projects</button></a></li>
+        <li><a href="#contact"><button>Contact</button></a></li>
+        <li><button className="mode"><FaMoon />
+        </button></li>
+      </ul>
+    </nav>
+  );
+}
 
 //profile//
 
@@ -74,7 +129,7 @@ function Projects() {
           return (
             <div className='card' id={project.id}>
               <div className='image-card'>
-                <img src={project.image}></img>
+                <a><img src={project.image}></img></a>
               </div>
               <div className='projects-text'>
                 <h2>{project.title}</h2>
@@ -104,23 +159,23 @@ function Projects() {
 const myStacks = [
   {
     name: "html",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png"
+    icon: <FaHtml5 />
   },
   {
     name: "css",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+    icon: <FaCss3Alt />
   },
   {
     name: "javascript",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/946px-Javascript_badge.svg.png"
+    icon: <IoLogoJavascript />
   },
   {
     name: "react",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+    icon: <FaReact />
   },
   {
     name: "sql",
-    image: "https://www.svgrepo.com/show/331760/sql-database-generic.svg"
+    icon: <PiFileSqlFill />
   }
 ]
 
@@ -128,12 +183,15 @@ function Stacks() {
   return (
     <section id='stacks' className='section'>
       <h3>Stacks</h3>
-      {myStacks.map(function (item) {
-        return (
-          <>
-            <img src={item.image} alt={item.name}></img>
-          </>);
-      })}
+      <div className='icons'>
+        {myStacks.map(function (item) {
+          return (
+            <div className='icon'>
+              {item.icon}
+              <h4>{item.name}</h4>
+            </div>);
+        })}
+      </div>
     </section>
   );
 }
@@ -142,41 +200,59 @@ function Stacks() {
 
 function Contact() {
   return (
-    <section id="contact" class="section">
+    <section id="contact" className="section">
       <h3 id="title">Contact me</h3>
-      <h1 id="paragraph">If you want to get in touch, you can
-        <span id="underlined-element" class="clickable-element"><a href="mailto:youssefechadysfaxi@gmail.com">email
-          me</a></span> or visit
-        <span id="underlined-element" class="clickable-element"><a
+      <h1 id="paragraph">If you want to get in touch, you can <span id="underlined-element" className="clickable-element"><a href="mailto:youssefechadysfaxi@gmail.com">email
+        me</a></span> or visit <span id="underlined-element" className="clickable-element"><a
           href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/" target="_blank">my Linkedin</a></span>.
-        <br></br>You can also
-          <span id="underlined-element" class="clickable-element"><a href="assets/Resume.pdf"
-            download="assets/Resume.pdf">
-            download my CV</a></span>
-          or
-          <span id="underlined-element" class="clickable-element">
-            <a href="https://github.com/elaxolotl" target="_blank">check my Github</a></span>
-          for more information about me
+        <br></br>You can also <span id="underlined-element" className="clickable-element"><a href="assets/Resume.pdf"
+          download="assets/Resume.pdf">
+          download my resume</a></span> or <span id="underlined-element" className="clickable-element">
+          <a href="https://github.com/elaxolotl" target="_blank">check my Github</a></span> for more information about me!
       </h1>
       <div id="contact-icons">
-        <a class="clickable-element" href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/"><i
-          class="fa-brands fa-linkedin"></i></a>
-      <a class="clickable-element" href="mailto:youssefechadysfaxi@gmail.com"><i
-        class="fa-solid fa-envelope"></i></a>
-      <a class="clickable-element" href="https://www.facebook.com/youssefechady.sfaxi/" target="_blank"><i
-        class="fa-brands fa-square-facebook"></i></a>
+        <a className="clickable-element" href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/">
+          <FaLinkedin />
+        </a>
+        <a className="clickable-element" href="mailto:youssefechadysfaxi@gmail.com">
+          <IoIosMail />
+        </a>
+        <a className="clickable-element" href="https://www.facebook.com/youssefechady.sfaxi/" target="_blank">
+          <FaFacebookSquare />
+        </a>
       </div>
-   </section >
+    </section >
+  );
+}
+
+//footer//
+function Footer() {
+  return (
+    <footer class="section">
+      <div class="footer">
+        <div>
+          <h3>Stay great</h3>
+        </div>
+        <div class="clickable-element">
+          <a href="#desktop-nav">
+            <FaArrowUp />
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }
 
 function App() {
   return (
     <>
+      <Cursor />
+      <Nav />
       <Profile />
       <Projects />
       <Stacks />
       <Contact />
+      <Footer />
     </>
   )
 }
