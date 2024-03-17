@@ -164,23 +164,23 @@ function Projects() {
 
 const myStacks = [
   {
-    name: "html",
+    name: "Html",
     icon: <FaHtml5 />
   },
   {
-    name: "css",
+    name: "Css",
     icon: <FaCss3Alt />
   },
   {
-    name: "javascript",
+    name: "Javascript",
     icon: <IoLogoJavascript />
   },
   {
-    name: "react",
+    name: "React",
     icon: <FaReact />
   },
   {
-    name: "sql",
+    name: "SQL",
     icon: <PiFileSqlFill />
   }
 ]
