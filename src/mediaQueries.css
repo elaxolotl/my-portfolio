@@ -1,0 +1,167 @@
+@media screen and (max-width:1200px) {
+
+    .App {
+        display: none;
+    }
+
+    #profile {
+        margin: 0vh 5vh 0vh 5vh;
+    }
+
+    #paragraph {
+        font-size: 40px;
+    }
+
+    .project-cards img {
+        transition: transform 0.3s ease;
+        height: 150px;
+        width: auto;
+        cursor: pointer;
+    }
+
+    .image-card {
+        overflow: hidden;
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
+        position: relative;
+        z-index: 1;
+        object-fit: cover;
+        height: 150px;
+    }
+
+    .project-cards {
+        gap: 25px;
+    }
+
+    .project-cards h2 {
+        font-size: 15px;
+    }
+
+    .project-icons {
+        font-size: 20px;
+        gap: 20px;
+    }
+
+    .load-button {
+        margin-top: 3vh;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+    .time {
+        margin: 15vh 0vh 15vh 0vh;
+    }
+
+    /*PROJECTS*/
+
+    .project-cards {
+        gap: 5vh;
+        margin-top: 5vh;
+    }
+
+    .image-card {
+        border-radius: 20px;
+        height: 20vh;
+        width: 13vh;
+    }
+
+    .project-cards img {
+        height: 20vh;
+        width: 13vh;
+    }
+
+    .project-cards h2 {
+        font-size: 15px;
+    }
+
+    .project-icons {
+        font-size: 15px;
+        gap: 20px;
+    }
+
+    .load-button {
+        margin-top: 5vh;
+    }
+
+    #projects button {
+        padding: 1vh 1.5vh 1vh 1.5vh;
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    #paragraph {
+        font-size: 20px;
+    }
+
+    #profile img {
+        width: auto;
+        height: 25px;
+        margin: 0px;
+    }
+
+    #underlined-element {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+
+    #title {
+        font-size: 12px;
+    }
+
+    /*FLOATING NAV*/
+
+    .floating-nav {
+        padding: 10px;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .floating-nav button {
+        padding: 1vh 1.5vh 1vh 1.5vh;
+        font-size: 15px;
+    }
+
+    /*PROJECTS*/
+
+    .project-cards {
+        gap: 5vh;
+        margin-top: 5vh;
+    }
+
+    .image-card {
+        border-radius: 20px;
+        height: 20vh;
+        width: 13vh;
+    }
+
+    .project-cards img {
+        height: 20vh;
+        width: 13vh;
+    }
+
+    .project-cards h2 {
+        font-size: 15px;
+    }
+
+    .project-icons {
+        font-size: 15px;
+        gap: 20px;
+    }
+
+    .load-button {
+        margin-top: 5vh;
+    }
+
+    #projects button {
+        padding: 1vh 1.5vh 1vh 1.5vh;
+        font-size: 10px;
+    }
+
+
+}

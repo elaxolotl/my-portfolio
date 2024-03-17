@@ -1,4 +1,5 @@
 import './App.css';
+import './mediaQueries.css';
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill } from "react-icons/pi";
@@ -101,23 +102,26 @@ function Profile() {
 const myProjects = [
   {
     title: "Eye-Track",
-    description: "Eye-track is a fun and interactive project where a pair of animated eyeballs follow the movement of your mouse cursor across the screen.",
-    image: "/eye-track.jpg",
+    description: "A simple interactive project where a pair of animated eyeballs follow the movement of your mouse cursor across the screen.",
+    image: "/eyeTrack.jpg",
     year: "2023",
+    link: "https://leafy-rolypoly-67db4e.netlify.app/",
     id: 1
   },
   {
     title: "calculator",
-    description: "A straightforward calculator for basic arithmetic operations. Perform addition, subtraction, multiplication, and division effortlessly with this easy-to-use tool.",
-    image: "/calculator.jpg",
+    description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
+    image: "/Calculator.jpg",
     year: "2023",
+    link: "https://fluffy-dango-b3438b.netlify.app/",
     id: 2
   },
   {
     title: "Weather app",
-    description: "this is a simple weather app that uses an API to fetch and display weather condition in any given location.",
+    description: "A simple weather app that uses an API to fetch and display weather condition in any given location.",
     image: "/weather app.jpg",
     year: "2023",
+    link: "https://transcendent-peony-2bf5a2.netlify.app/",
     id: 3
   }
 ]
@@ -131,13 +135,11 @@ function Projects() {
           return (
             <div className='card' id={project.id}>
               <div className='image-card'>
-                <a><img src={project.image}></img></a>
+                <a href={project.link} target='_blank'><img src={project.image}></img></a>
               </div>
               <div className='projects-text'>
                 <h2>{project.title}</h2>
-                <div className="fade">
                   <p className={'description'} >{project.description}</p>
-                </div>
                 <p className='year'>{project.year}</p>
               </div>
             </div>
