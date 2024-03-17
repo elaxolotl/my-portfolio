@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+html,body{
+  overflow-x: hidden;
+}
+
 .app {
   background-color: var(--bg);
   font-family: 'Rethink Sans', sans-serif;
@@ -46,13 +50,13 @@ a {
 }
 
 #paragraph {
-  font-size: 60px;
+  font-size: 6vh;
   transition: 0.3s;
 }
 
 #underlined-element {
   text-decoration: underline;
-  text-underline-offset: 12px;
+  text-underline-offset: 1.2vh;
   transition: 0.3s;
   text-decoration-color: var(--cursor);
   cursor: pointer;
@@ -60,29 +64,6 @@ a {
 
 #underlined-element:hover {
   text-decoration-color: var(--text);
-}
-
-/*cursor*/
-
-.cursor {
-  width: 35px;
-  height: 35px;
-  background-color: transparent;
-  border: solid 2.7px var(--cursor);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 999;
-  transition: transform 0.3s ease-out;
-  opacity: 1;
-}
-
-.cursor.hover {
-  transform: scale(2);
-  cursor: pointer;
 }
 
 /*nav*/
@@ -95,14 +76,14 @@ nav {
     height: 17vh;
     li{
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 2.1vh;
     }
     button {
       padding: 2vh 2.5vh 2vh 2.5vh;
       border-radius: 50px;
       font-family: inherit;
       font-weight: 900;
-      font-size: 20px;
+      font-size: 2.1vh;
       transition: 0.5s;
       border: none;
       background-color: var(--text);
@@ -125,9 +106,9 @@ nav {
 
   img {
     width: auto;
-    height: 65px;
+    height: 6.8vh;
     clip-path: circle();
-    margin: 0px 7px -5px 7px;
+    margin: 0vh 0.7vh -0.5vh 0.7vh;
     transition: 0.3s;
     z-index: 999;
   }
@@ -140,7 +121,7 @@ nav {
   }
 
   h1 {
-    margin-top: 150px;
+    margin-top: 15.7vh;
   }
 
   .time {
@@ -193,8 +174,8 @@ nav {
 
       img,
       .image-card {
-        width: 500px;
-        height: 190px;
+        width: 52.5vh;
+        height: 19.93vh;
       }
 
       img:hover {
@@ -204,25 +185,25 @@ nav {
       .projects-text{
         background-color: rgb(212, 212, 212);
         color: var(--gray3);
-        width: 500px;
+        width: 52.5vh;
         text-align: center;
       }
 
       h2 {
-        font-size: 30px;
+        font-size: 3.14vh;
         margin-top: 0px;
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
       }
 
       .description-{
         position: relative;
         overflow: hidden;
         transition: max-height 0.5s ease;
-      }
+      } 
 
       .year{
         text-align: left;
-        padding: 10px
+        padding: 1vh
       }
     }
   }
@@ -248,11 +229,11 @@ nav {
   }
   .icon{
     text-align: center;
-    font-size: 70px;
-    margin: 50px 50px 0px 0px;
+    font-size: 7.34vh;
+    margin: 5.24vh 5.24vh 0vh 0vh;
   }
   h4{
-    font-size: 15px;
+    font-size: 1.6vh;
   }
 }
 
@@ -262,13 +243,13 @@ nav {
   margin: 15vh 15vh 7vh 15vh;
   color: var(--text);
   h3{
-    margin-bottom: 30px;
+    margin-bottom: 3.14vh;
   }
   #contact-icons {
-    font-size: 25px;
+    font-size: 2.62vh;
     display: flex;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 2.1vh;
     margin-top: 5vh;
     cursor: pointer;
   }
@@ -284,7 +265,7 @@ nav {
   display: flex;
   justify-content: space-between;
   a {
-    font-size: 20px;
+    font-size: 2.1vh;
     cursor: pointer;
   }
 }

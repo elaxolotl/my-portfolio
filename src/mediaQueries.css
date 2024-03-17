@@ -1,15 +1,7 @@
 @media screen and (max-width:1200px) {
 
-    .App {
+    #cursor {
         display: none;
-    }
-
-    #profile {
-        margin: 0vh 5vh 0vh 5vh;
-    }
-
-    #paragraph {
-        font-size: 40px;
     }
 
     .project-cards img {
@@ -94,7 +86,7 @@
 
 @media screen and (max-width:600px) {
     #paragraph {
-        font-size: 20px;
+        font-size: 6vh;
     }
 
     #profile img {

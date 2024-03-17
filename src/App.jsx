@@ -1,10 +1,10 @@
 import './App.css';
 import './mediaQueries.css';
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon  } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill } from "react-icons/pi";
 import { IoIosMail} from "react-icons/io";
-import { FaArrowDownLong } from "react-icons/fa6";  
+import { FaArrowDownLong } from "react-icons/fa6"; 
 import React, {useState} from "react";
 import AnimatedCursor from "react-animated-cursor";
 
@@ -14,7 +14,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 function Cursor() {
   return (
-    <div className="App">
+    <div id='cursor'>
       <AnimatedCursor
         innerSize={0}
         outerSize={50}
@@ -45,10 +45,12 @@ function Cursor() {
 }
 
 //nav//
+
+
 function Nav({ toggleTheme })  {
   return (
     <nav id="desktop-nav">
-      <ul class="nav-links">
+      <ul className="nav-links">
         <li ><a href="#projects"><button>Projects</button></a></li>
         <li><a href="#contact"><button>Contact</button></a></li>
         <li><button className="mode" onClick={toggleTheme}><FaMoon />
@@ -232,12 +234,12 @@ function Contact() {
 //footer//
 function Footer() {
   return (
-    <footer class="section">
-      <div class="footer">
+    <footer className="section">
+      <div className="footer">
         <div>
           <h3>Stay great</h3>
         </div>
-        <div class="clickable-element">
+        <div className="clickable-element">
           <a href="#desktop-nav">
             <FaArrowUp />
           </a>
@@ -248,11 +250,12 @@ function Footer() {
 }
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
 
+  const [isDark, setIsDark] = useState(true);
   const toggleTheme = () => {
     setIsDark(prev => !prev);
   };
+
   return (
     <div data-theme={isDark ? "dark" : "light"} className='app'>
       <Cursor />
