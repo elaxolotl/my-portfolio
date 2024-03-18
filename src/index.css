@@ -76,7 +76,7 @@ nav {
     height: 17vh;
     li{
       display: inline-block;
-      margin-right: 2.1vh;
+      margin-right: 2vh;
     }
     button {
       padding: 2vh 2.5vh 2vh 2.5vh;
@@ -226,6 +226,7 @@ nav {
   color: var(--text);
   .icons{
     display: flex;
+    flex-wrap: wrap;
   }
   .icon{
     text-align: center;
@@ -245,7 +246,7 @@ nav {
   h3{
     margin-bottom: 3vh;
   }
-  #contact-icons {
+  #contact-icons {  
     font-size: 2.5vh;
     display: flex;
     justify-content: flex-start;

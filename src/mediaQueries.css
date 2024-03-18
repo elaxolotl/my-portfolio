@@ -1,5 +1,9 @@
 @media (max-width: 1200px) {
 
+    nav {
+        margin: 0vh 5vh 0vh 15vh !important;
+    }
+
     #paragraph {
         font-size: 40px !important;
     }
@@ -8,6 +12,28 @@
         display: none;
     }
 
+}
+
+@media screen and (max-width:900px) {
+    nav {
+        margin: 0vh 5vh 0vh 10vh !important;
+    }
+
+    #profile {
+        margin: 7vh 10vh 0vh 10vh !important;
+        img {
+            height: 5vh !important;
+            margin-bottom: -10px !important;
+        }
+    }
+    #stacks{
+        margin: 7vh 10vh 10vh 10vh !important;
+        overflow: hidden;
+    }
+
+    #contact{
+        margin: 15vh 10vh 7vh 10vh !important;
+    }
 }
 
 @media screen and (max-width:600px) {
@@ -23,6 +49,14 @@
     nav {
         margin: 0vh 5vh 0vh 5vh !important;
         height: 15px !important;
+
+        li {
+            margin-right: 1vh !important;
+        }
+
+        button {
+            font-size: 15px !important;
+        }
     }
 
 
@@ -34,7 +68,7 @@
         img {
             width: auto;
             height: 6vh !important;
-            margin-bottom: -10px !important;
+            margin-bottom: -15px !important;
         }
 
         span:hover .profile-image,
@@ -119,14 +153,12 @@
     }
 
     /*footer*/
-    
+
     .footer {
 
         margin: 15vh 5vh 0vh 5vh !important;
 
 
     }
-
-
 
 }
