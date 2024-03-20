@@ -122,7 +122,7 @@ const myProjects = [
     image: "/weather app.jpg",
     year: "2023",
     link: "https://transcendent-peony-2bf5a2.netlify.app/",
-  }
+  },
   {
     title: "calculator",
     description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
@@ -170,23 +170,28 @@ function Projects() {
 const myStacks = [
   {
     name: "Html",
-    icon: <FaHtml5 />
+    icon: <FaHtml5 />,
+    color: "#DD4B25"
   },
   {
     name: "Css",
-    icon: <FaCss3Alt />
+    icon: <FaCss3Alt />,
+    color: "#2862E9"
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript />
+    icon: <IoLogoJavascript />,
+    color: "#F7D724"
   },
   {
     name: "React",
-    icon: <FaReact />
+    icon: <FaReact />,
+    color: "#5ED3F3"
   },
   {
     name: "SQL",
-    icon: <PiFileSqlFill />
+    icon: <PiFileSqlFill />,
+    color: "#00B6EA"
   }
 ]
 
@@ -198,7 +203,7 @@ function Stacks() {
         {myStacks.map(function (item) {
           return (
             <div className='icon'>
-              {item.icon}
+              <p style={{color: `${item.color}`}}>{item.icon}</p>
               <h4>{item.name}</h4>
             </div>);
         })}
