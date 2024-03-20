@@ -121,7 +121,7 @@ const myProjects = [
   },
   {
     title: "Weather app",
-    description: "Real-time weather app fetching data from WeatherAPI, allowing users to search and view weather information for different locations.",
+    description: "Real-time weather app fetching data from WeatherAPI, allowing users to get weather info for different locations.",
     image: "/weather app.jpg",
     year: "2023",
     link: "https://transcendent-peony-2bf5a2.netlify.app/",
