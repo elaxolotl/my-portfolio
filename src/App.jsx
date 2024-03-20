@@ -2,11 +2,12 @@ import './App.css';
 import './mediaQueries.css';
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon  } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { PiFileSqlFill } from "react-icons/pi";
-import { IoIosMail} from "react-icons/io";
+import { PiFileSqlFill, PiGithubLogoFill  } from "react-icons/pi";
+import { IoIosMail, IoMdEye } from "react-icons/io";
 import { FaArrowDownLong } from "react-icons/fa6"; 
 import React, {useState} from "react";
 import AnimatedCursor from "react-animated-cursor";
+
 
 
 
@@ -104,24 +105,27 @@ function Profile() {
 const myProjects = [
   {
     title: "Galactic Explorer",
-    description: "A simple website for an imaginary.",
+    description: "a React-based website offering an immersive journey through space exploration",
     image: "/galactic explorer.jpg",
     year: "2024",
     link: "https://sprightly-cuchufli-2c4619.netlify.app/",
+    github: "https://github.com/elaxolotl/galactic-explorer"
   },
   {
     title: "Eye-Track",
-    description: "A simple interactive project where a pair of animated eyeballs follow the movement of your mouse cursor across the screen.",
+    description: "Interactive eyeballs track cursor movement, demonstrating mouse tracking using HTML, CSS, and JavaScript.",
     image: "/eyeTrack.jpg",
     year: "2023",
     link: "https://leafy-rolypoly-67db4e.netlify.app/",
+    github: "https://github.com/elaxolotl/Eye-Tracker"
   },
   {
     title: "Weather app",
-    description: "A simple weather app that uses an API to fetch and display weather condition in any given location.",
+    description: "Real-time weather app fetching data from WeatherAPI, allowing users to search and view weather information for different locations.",
     image: "/weather app.jpg",
     year: "2023",
     link: "https://transcendent-peony-2bf5a2.netlify.app/",
+    github: "https://github.com/elaxolotl/weatherApp"
   },
   {
     title: "calculator",
@@ -129,6 +133,7 @@ const myProjects = [
     image: "/Calculator.jpg",
     year: "2023",
     link: "https://fluffy-dango-b3438b.netlify.app/",
+    github: "https://github.com/elaxolotl/Calculator"
   },
   
 ];
@@ -158,6 +163,10 @@ function Projects() {
             <div className='projects-text'>
               <h2>{project.title}</h2>
               <p className={'description'}>{project.description}</p>
+              <div className='project-links'>
+                <a href={project.link} target='_blank'><IoMdEye /></a>
+                <a href={project.github} target='_blank'><PiGithubLogoFill /></a>
+              </div>
               <p className='year'>{project.year}</p>
             </div>
           </div>

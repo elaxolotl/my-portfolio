@@ -188,6 +188,14 @@ nav {
         color: var(--gray3);
         width: 52.5vh;
         text-align: center;
+        .project-links{
+          font-size: 30px;
+          a{
+            color: #1A1917;
+            margin: 0px 10px 0px 10px; 
+            cursor: pointer;
+          }
+        }
       }
 
       h2 {
