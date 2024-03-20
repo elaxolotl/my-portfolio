@@ -103,6 +103,14 @@ function Profile() {
 
 const myProjects = [
   {
+    title: "Galactic Explorer",
+    description: "A simple website for an imaginary.",
+    image: "/galactic explorer.jpg",
+    year: "2024",
+    link: "https://sprightly-cuchufli-2c4619.netlify.app/",
+    id: 1
+  },
+  {
     title: "Eye-Track",
     description: "A simple interactive project where a pair of animated eyeballs follow the movement of your mouse cursor across the screen.",
     image: "/eyeTrack.jpg",
