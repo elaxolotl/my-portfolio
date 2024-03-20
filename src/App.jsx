@@ -108,7 +108,6 @@ const myProjects = [
     image: "/galactic explorer.jpg",
     year: "2024",
     link: "https://sprightly-cuchufli-2c4619.netlify.app/",
-    id: 1
   },
   {
     title: "Eye-Track",
@@ -116,15 +115,6 @@ const myProjects = [
     image: "/eyeTrack.jpg",
     year: "2023",
     link: "https://leafy-rolypoly-67db4e.netlify.app/",
-    id: 1
-  },
-  {
-    title: "calculator",
-    description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
-    image: "/Calculator.jpg",
-    year: "2023",
-    link: "https://fluffy-dango-b3438b.netlify.app/",
-    id: 2
   },
   {
     title: "Weather app",
@@ -132,8 +122,15 @@ const myProjects = [
     image: "/weather app.jpg",
     year: "2023",
     link: "https://transcendent-peony-2bf5a2.netlify.app/",
-    id: 3
   }
+  {
+    title: "calculator",
+    description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
+    image: "/Calculator.jpg",
+    year: "2023",
+    link: "https://fluffy-dango-b3438b.netlify.app/",
+  },
+
 ]
 
 function Projects() {
@@ -143,7 +140,7 @@ function Projects() {
       <div className="project-cards">
         {myProjects.map(function (project) {
           return (
-            <div className='card' id={project.id}>
+            <div className='card' id={project.index}>
               <div className='image-card'>
                 <a href={project.link} target='_blank'><img src={project.image}></img></a>
               </div>
