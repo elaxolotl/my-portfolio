@@ -130,37 +130,52 @@ const myProjects = [
     year: "2023",
     link: "https://fluffy-dango-b3438b.netlify.app/",
   },
-
-]
+  
+];
 
 function Projects() {
+  const [projectsToShow, setProjectsToShow] = useState(3);
+  const [showMore, setShowMore] = useState(true);
+
+  const handleSeeMore = () => {
+    setProjectsToShow(prevCount => prevCount + 3);
+  };
+
+  const handleHide = () => {
+    setProjectsToShow(3);
+    setShowMore(true);
+  };
+
   return (
     <section id="projects" className="section">
       <h3 id="title">My projects</h3>
       <div className="project-cards">
-        {myProjects.map(function (project) {
-          return (
-            <div className='card' id={project.index}>
-              <div className='image-card'>
-                <a href={project.link} target='_blank'><img src={project.image}></img></a>
-              </div>
-              <div className='projects-text'>
-                <h2>{project.title}</h2>
-                  <p className={'description'} >{project.description}</p>
-                <p className='year'>{project.year}</p>
-              </div>
+        {myProjects.slice(0, projectsToShow).map((project, index) => (
+          <div className='card' key={index}>
+            <div className='image-card'>
+              <a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a>
             </div>
-          )
-        })
-        }
+            <div className='projects-text'>
+              <h2>{project.title}</h2>
+              <p className={'description'}>{project.description}</p>
+              <p className='year'>{project.year}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className='btn'>
-        <button className="clickable-element" id='underlined-element'>
-          <a href='/projects' target='_blank' >
+      {showMore && projectsToShow < myProjects.length ? (
+        <div className='btn'>
+          <button className="clickable-element" id='underlined-element' onClick={handleSeeMore}>
             <h2>See more</h2>
-          </a>
-        </button>
-      </div>
+          </button>
+        </div>
+      ) : (
+        <div className='btn'>
+          <button className="clickable-element" id='underlined-element' onClick={handleHide}>
+            <h2>Hide</h2>
+          </button>
+        </div>
+      )}
     </section>
   );
 }

@@ -50,6 +50,7 @@ a {
 }
 
 #paragraph {
+  font-weight: 200;
   font-size: 6vh;
   transition: 0.3s;
 }
@@ -208,6 +209,7 @@ nav {
     }
   }
   button {
+    color: white;
     text-align: center;
     margin: 7vh ;
     left: 50%;
