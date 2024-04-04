@@ -5,7 +5,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail, IoMdEye } from "react-icons/io";
 import { FaArrowDownLong } from "react-icons/fa6";
-import React, { useState, useEffect  } from "react";
+import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 
 
@@ -49,33 +49,13 @@ function Cursor() {
 
 
 function Nav({ toggleTheme }) {
-  const [currentSection, setCurrentSection] = useState('');
-
-  useEffect(() => {
-    function handleScroll() {
-      const sections = document.querySelectorAll('.section');
-
-      sections.forEach(section => {
-        const bounding = section.getBoundingClientRect();
-        if (
-          bounding.top >= 0 &&
-          bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        ) {
-          setCurrentSection(section.id);
-        }
-      });
-    }
-
-    document.addEventListener('scroll', handleScroll);
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <nav id="desktop-nav">
       <ul className="nav-links">
-        <li ><a href="#projects" className={currentSection === 'projects' ? 'active' : ''}><button>Projects</button></a></li>
-        <li><a href="#contact" className={currentSection === 'contact' ? 'active' : ''}><button>Contact</button></a></li>
+        <li ><a href="#profile"><button>Me</button></a></li>
+        <li ><a href="#projects"><button>Projects</button></a></li>
+        <li ><a href="#stacks"><button>Skills</button></a></li>
+        <li><a href="#contact"><button>Contact</button></a></li>
         <li><button className="mode" onClick={toggleTheme}><FaMoon />
         </button></li>
       </ul>
@@ -244,7 +224,7 @@ const myStacks = [
 function Stacks() {
   return (
     <section id='stacks' className='section'>
-      <h3>Stacks</h3>
+      <h3>Skills</h3>
       <div className='icons'>
         {myStacks.map(function (item) {
           return (
