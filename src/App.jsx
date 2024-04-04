@@ -1,11 +1,11 @@
 import './App.css';
 import './mediaQueries.css';
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon  } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { PiFileSqlFill, PiGithubLogoFill  } from "react-icons/pi";
+import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail, IoMdEye } from "react-icons/io";
-import { FaArrowDownLong } from "react-icons/fa6"; 
-import React, {useState} from "react";
+import { FaArrowDownLong } from "react-icons/fa6";
+import React, { useState, useEffect  } from "react";
 import AnimatedCursor from "react-animated-cursor";
 
 
@@ -48,12 +48,34 @@ function Cursor() {
 //nav//
 
 
-function Nav({ toggleTheme })  {
+function Nav({ toggleTheme }) {
+  const [currentSection, setCurrentSection] = useState('');
+
+  useEffect(() => {
+    function handleScroll() {
+      const sections = document.querySelectorAll('.section');
+
+      sections.forEach(section => {
+        const bounding = section.getBoundingClientRect();
+        if (
+          bounding.top >= 0 &&
+          bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        ) {
+          setCurrentSection(section.id);
+        }
+      });
+    }
+
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <nav id="desktop-nav">
       <ul className="nav-links">
-        <li ><a href="#projects"><button>Projects</button></a></li>
-        <li><a href="#contact"><button>Contact</button></a></li>
+        <li ><a href="#projects" className={currentSection === 'projects' ? 'active' : ''}><button>Projects</button></a></li>
+        <li><a href="#contact" className={currentSection === 'contact' ? 'active' : ''}><button>Contact</button></a></li>
         <li><button className="mode" onClick={toggleTheme}><FaMoon />
         </button></li>
       </ul>
@@ -82,7 +104,7 @@ function Profile() {
   return (
     <section id="profile" className="section">
       <div className="section">
-        <h1 id="paragraph">Hi! My name is <span id="underlined-element" className="clickable-element">
+        <h1 id="paragraph">Hi!&#128075; My name is <span id="underlined-element" className="clickable-element">
           Youssef
           <img className="profile-image" src="/youssef.jpg"></img>
         </span>
@@ -135,7 +157,7 @@ const myProjects = [
     link: "https://fluffy-dango-b3438b.netlify.app/",
     github: "https://github.com/elaxolotl/Calculator"
   },
-  
+
 ];
 
 function Projects() {
@@ -227,7 +249,7 @@ function Stacks() {
         {myStacks.map(function (item) {
           return (
             <div className='icon'>
-              <p style={{color: `${item.color}`}}>{item.icon}</p>
+              <p style={{ color: `${item.color}` }}>{item.icon}</p>
               <h4>{item.name}</h4>
             </div>);
         })}
