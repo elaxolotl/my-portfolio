@@ -1,17 +1,18 @@
 import './App.css';
 import './mediaQueries.css';
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon  } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
-import { IoIosMail, IoMdEye } from "react-icons/io";
+import { IoIosMail } from "react-icons/io";
 import { FaArrowDownLong } from "react-icons/fa6";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Tilt from 'react-parallax-tilt';
-
-
-
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 //cursor//
 
@@ -145,6 +146,7 @@ const myProjects = [
 function Projects() {
   const [projectsToShow, setProjectsToShow] = useState(3);
   const [showMore, setShowMore] = useState(true);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
 
   const handleSeeMore = () => {
     setProjectsToShow(prevCount => prevCount + 3);
@@ -153,6 +155,18 @@ function Projects() {
   const handleHide = () => {
     setProjectsToShow(3);
     setShowMore(true);
+  };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = (index) => {
+    setSelectedProjectIndex(index);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setSelectedProjectIndex(null);
+    setOpen(false);
   };
 
   return (
@@ -167,14 +181,43 @@ function Projects() {
               <div className='project-links'>
               </div>
               <p className='year'>{project.year}</p>
-              <button>Open <GoArrowRight className='arrow'/></button>
+              <Button onClick={() => handleOpen(index)} style={{ marginLeft: '-27vh' }}>Open <GoArrowRight className='arrow' /></Button>
             </div>
             <div className='image-card'>
-            <Tilt><a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a></Tilt>
+              <Tilt><a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a></Tilt>
             </div>
           </div>
         ))}
       </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className='modal'
+      >
+        <Box>
+          <Cursor />
+          {selectedProjectIndex !== null && (
+            <>
+              <div>
+                <img src={myProjects[selectedProjectIndex].image} alt={myProjects[selectedProjectIndex].title} />
+              </div>
+              <div>
+                <h1>{myProjects[selectedProjectIndex].title}</h1><br />
+                <p>{myProjects[selectedProjectIndex].description}</p>
+                <Button href={myProjects[selectedProjectIndex].link} target='_blank' rel="noopener noreferrer" sx={{ mt: 3 }}>
+                  View Project
+                </Button>
+                <Button href={myProjects[selectedProjectIndex].github} target='_blank' rel="noopener noreferrer" sx={{ mt: 3 }}>
+                  <PiGithubLogoFill />
+                </Button>
+              </div>
+            </>
+          )}
+
+        </Box>
+      </Modal>
       {showMore && projectsToShow < myProjects.length ? (
         <div className='btn'>
           <button className="clickable-element" id='underlined-element' onClick={handleSeeMore}>
@@ -248,7 +291,7 @@ function Contact() {
       <h1 id="paragraph">If you want to get in touch, you can <span id="underlined-element" className="clickable-element"><a href="mailto:youssefechadysfaxi@gmail.com">email
         me</a></span> or visit <span id="underlined-element" className="clickable-element"><a
           href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/" target="_blank">my Linkedin</a></span>.
-        <br></br>You can also <span id="underlined-element" className="clickable-element"><a href="assets/Resume.pdf"
+        You can also <span id="underlined-element" className="clickable-element"><a href="assets/Resume.pdf"
           download="assets/Resume.pdf">
           download my resume</a></span> or <span id="underlined-element" className="clickable-element">
           <a href="https://github.com/elaxolotl" target="_blank">check my Github</a></span> for more information about me!
@@ -263,6 +306,9 @@ function Contact() {
         <a className="clickable-element" href="https://www.facebook.com/youssefechady.sfaxi/" target="_blank">
           <FaFacebookSquare />
         </a>
+        <a className="clickable-element" href="https://github.com/elaxolotl" target="_blank">
+          <PiGithubLogoFill />
+        </a>
       </div>
     </section >
   );
@@ -274,10 +320,10 @@ function Footer() {
     <footer className="section">
       <div className="footer">
         <div>
-          <h3>Stay great</h3>
+          <h3>Made with &#128151;</h3>
         </div>
         <div className="clickable-element">
-          <a href="#desktop-nav">
+          <a href="#profile">
             <FaArrowUp />
           </a>
         </div>
@@ -306,4 +352,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
