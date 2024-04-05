@@ -16,6 +16,19 @@
         display: none;
     }
 
+    .modal{
+        width: 50vh !important;
+        padding: 2vh 5vh;
+        margin: 20vh 50vh;
+        img{
+          margin-left: 0vh !important;
+          text-align: left;
+          width: 50vh !important;
+          height: auto;
+          border-radius: 20px;
+        }
+      }
+
 }
 
 @media screen and (max-width:900px) {
