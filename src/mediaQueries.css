@@ -1,7 +1,11 @@
 @media (max-width: 1200px) {
 
     nav {
-        margin: 0vh 5vh 0vh 15vh !important;
+        margin: 0vh 5vh 0vh 10vh !important;
+        width: 125vh !important;
+        .mode {
+            margin-left: 57vh !important;
+        }
     }
 
     #paragraph {
