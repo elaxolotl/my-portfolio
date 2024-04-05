@@ -1,12 +1,14 @@
 import './App.css';
 import './mediaQueries.css';
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon  } from "react-icons/fa";
+import { GoArrowRight } from "react-icons/go";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail, IoMdEye } from "react-icons/io";
 import { FaArrowDownLong } from "react-icons/fa6";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
+import Tilt from 'react-parallax-tilt';
 
 
 
@@ -159,17 +161,16 @@ function Projects() {
       <div className="project-cards">
         {myProjects.slice(0, projectsToShow).map((project, index) => (
           <div className='card' key={index}>
-            <div className='image-card'>
-              <a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a>
-            </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
               <p className={'description'}>{project.description}</p>
               <div className='project-links'>
-                <a href={project.link} target='_blank'><IoMdEye /></a>
-                <a href={project.github} target='_blank'><PiGithubLogoFill /></a>
               </div>
               <p className='year'>{project.year}</p>
+              <button>Open <GoArrowRight className='arrow'/></button>
+            </div>
+            <div className='image-card'>
+            <Tilt><a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a></Tilt>
             </div>
           </div>
         ))}
