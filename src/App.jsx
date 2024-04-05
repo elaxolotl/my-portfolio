@@ -11,7 +11,6 @@ import AnimatedCursor from "react-animated-cursor";
 import Tilt from 'react-parallax-tilt';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 //cursor//
@@ -181,7 +180,7 @@ function Projects() {
               <div className='project-links'>
               </div>
               <p className='year'>{project.year}</p>
-              <Button onClick={() => handleOpen(index)} style={{ marginLeft: '-27vh' }}>Open <GoArrowRight className='arrow' /></Button>
+              <div className='card-button'><Button onClick={() => handleOpen(index)}>Open <GoArrowRight className='arrow' /></Button></div>
             </div>
             <div className='image-card'>
               <Tilt><a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a></Tilt>

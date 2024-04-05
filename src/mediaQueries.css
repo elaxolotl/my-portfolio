@@ -3,6 +3,7 @@
     nav {
         margin: 0vh 5vh 0vh 10vh !important;
         width: 125vh !important;
+
         .mode {
             margin-left: 57vh !important;
         }
@@ -16,39 +17,61 @@
         display: none;
     }
 
-    .modal{
+    .modal {
         width: 50vh !important;
         padding: 2vh 5vh;
         margin: 20vh 50vh;
-        img{
-          margin-left: 0vh !important;
-          text-align: left;
-          width: 50vh !important;
-          height: auto;
-          border-radius: 20px;
+
+        img {
+            margin-left: 0vh !important;
+            text-align: left;
+            width: 50vh !important;
+            height: auto;
+            border-radius: 20px;
         }
-      }
+    }
 
 }
 
 @media screen and (max-width:900px) {
     nav {
         margin: 0vh 5vh 0vh 10vh !important;
+        width: 90vh !important;
+
+        .mode {
+            margin-left: 23vh !important;
+        }
     }
 
     #profile {
         margin: 7vh 10vh 0vh 10vh !important;
+
         img {
             height: 5vh !important;
             margin-bottom: -10px !important;
         }
     }
-    #stacks{
+
+    #projects {
+        .card {
+            width: 70vh;
+
+            img {
+                width: 32vh !important;
+                height: 12vh !important;
+            }
+        }
+        .modal{
+            margin: 0vh !important;
+        }
+    }
+
+    #stacks {
         margin: 7vh 10vh 10vh 10vh !important;
         overflow: hidden;
     }
 
-    #contact{
+    #contact {
         margin: 15vh 10vh 7vh 10vh !important;
     }
 }
@@ -66,13 +89,23 @@
     nav {
         margin: 0vh 5vh 0vh 5vh !important;
         height: 15px !important;
+        width: 45vh !important;
+        background-color: none !important;
+        border: none !important;
+        backdrop-filter: none !important;
 
-        li {
-            margin-right: 1vh !important;
+        li{
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        button {
+        a{
+            display: none;
+        }
+
+        button.mode {
             font-size: 15px !important;
+            margin-left: 0vh !important;
         }
     }
 
@@ -108,7 +141,7 @@
         .project-cards {
 
             .card {
-
+                flex-wrap: wrap;
                 img,
                 .image-card {
                     width: 26.25vh !important;
@@ -116,7 +149,6 @@
                 }
 
                 .projects-text {
-                    background-color: rgb(212, 212, 212);
                     color: var(--gray3);
                     width: 26.25vh !important;
                     text-align: center;
@@ -132,6 +164,10 @@
 
                 .year {
                     font-size: 1.5vh !important;
+                }
+
+                .card-button{
+                    display: none;
                 }
             }
         }
