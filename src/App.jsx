@@ -1,4 +1,3 @@
-import './App.css';
 import './mediaQueries.css';
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
@@ -52,14 +51,14 @@ function Cursor() {
 
 function Nav({ toggleTheme }) {
   return (
-    <nav id="desktop-nav">
+    <nav>
       <ul className="nav-links">
-        <li ><a href="#profile"><button>Me</button></a></li>
-        <li ><a href="#projects"><button>Projects</button></a></li>
-        <li ><a href="#stacks"><button>Skills</button></a></li>
-        <li><a href="#contact"><button>Contact</button></a></li>
-        <li><button className="mode" onClick={toggleTheme}><FaMoon />
-        </button></li>
+          <li ><a href="#profile"><button>Me</button></a></li>
+          <li ><a href="#projects"><button>Projects</button></a></li>
+          <li ><a href="#stacks"><button>Skills</button></a></li>
+          <li><a href="#contact"><button>Contact</button></a></li>
+          <li><button className="mode" onClick={toggleTheme}><FaMoon />
+          </button></li>
       </ul>
     </nav>
   );
