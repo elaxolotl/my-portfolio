@@ -1,5 +1,6 @@
 import './mediaQueries.css';
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaMoon } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp } from "react-icons/fa";
+import { BsFillMoonStarsFill } from "react-icons/bs";
 import { GoArrowRight } from "react-icons/go";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
@@ -53,13 +54,13 @@ function Nav({ toggleTheme }) {
   return (
     <nav>
       <ul className="nav-links">
-          <li ><a href="#profile"><button>Me</button></a></li>
-          <li ><a href="#projects"><button>Projects</button></a></li>
-          <li ><a href="#stacks"><button>Skills</button></a></li>
-          <li><a href="#contact"><button>Contact</button></a></li>
-          <li><button className="mode" onClick={toggleTheme}><FaMoon />
-          </button></li>
+        <li ><a href="#profile"><button>Me</button></a></li>
+        <li ><a href="#projects"><button>Projects</button></a></li>
+        <li ><a href="#stacks"><button>Skills</button></a></li>
+        <li><a href="#contact"><button>Contact</button></a></li>
       </ul>
+      <button className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
+      </button>
     </nav>
   );
 }
