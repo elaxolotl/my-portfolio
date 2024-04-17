@@ -71,7 +71,7 @@
             button{
                 margin: 0 !important;
                 padding: 0 !important;
-                font-size: 15px !important;
+                font-size: 3vw !important;
             }
         }
 
@@ -112,6 +112,11 @@
                     height: 20vh !important;
                     width: 50vw !important;
                 }
+                .project-description{
+                    p{
+                      padding: 20% 2% !important;
+                    }
+                  }
             }
             .projects-text {
                 height: 100% !important;

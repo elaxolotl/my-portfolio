@@ -250,8 +250,9 @@ nav {
           height: 100%;
           border-top-left-radius: 10px;
           border-top-right-radius: 10px;
+          padding: 1px;
           p{
-            padding: 5vh 5vw;
+            padding: 15% 2%;
           }
         }
       }
@@ -269,7 +270,6 @@ nav {
         background-color: var(--bg2);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-
       }
 
       h2 {
