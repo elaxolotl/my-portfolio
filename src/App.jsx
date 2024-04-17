@@ -1,11 +1,13 @@
 import './mediaQueries.css';
+//icons
 import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp } from "react-icons/fa";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { GoArrowRight } from "react-icons/go";
-import { IoLogoJavascript } from "react-icons/io5";
+import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
-import { FaArrowDownLong } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
+import { TbSend } from "react-icons/tb";
+
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import Tilt from 'react-parallax-tilt';
@@ -86,7 +88,7 @@ function Profile() {
   return (
     <section id="profile" className="section">
       <div className="section">
-        <h1 id="paragraph">Hi!&#128075; My name is <span id="underlined-element" className="clickable-element">
+        <h1 id="paragraph">Hi!<span className="wave">👋</span> My name is <span id="underlined-element" className="clickable-element">
           Youssef
           <img className="profile-image" src="/youssef.jpg"></img>
         </span>
@@ -95,9 +97,10 @@ function Profile() {
             <img className="profile-image" src="/tbs.jpg"></img>
           </span>
         </h1>
+        <button className='profile-contact'><a href='mailto: youssefechadysfaxi@gmail.com'>Say hello </a><TbSend /></button>
       </div>
       <div className="time">
-        <div className="arrow"><a href='#projects'><FaArrowDownLong /></a></div>
+        <div className="arrow"><a href='#projects'><FaArrowDown /></a></div>
         <div id="clock">{getTime()}</div>
       </div>
     </section>
@@ -113,7 +116,8 @@ const myProjects = [
     image: "/galactic explorer.jpg",
     year: "2024",
     link: "https://sprightly-cuchufli-2c4619.netlify.app/",
-    github: "https://github.com/elaxolotl/galactic-explorer"
+    github: "https://github.com/elaxolotl/galactic-explorer",
+    type:" web app"
   },
   {
     title: "Eye-Track",
@@ -121,7 +125,8 @@ const myProjects = [
     image: "/eyeTrack.jpg",
     year: "2023",
     link: "https://leafy-rolypoly-67db4e.netlify.app/",
-    github: "https://github.com/elaxolotl/Eye-Tracker"
+    github: "https://github.com/elaxolotl/Eye-Tracker",
+    type:" web app"
   },
   {
     title: "Weather app",
@@ -129,44 +134,34 @@ const myProjects = [
     image: "/weather app.jpg",
     year: "2023",
     link: "https://transcendent-peony-2bf5a2.netlify.app/",
-    github: "https://github.com/elaxolotl/weatherApp"
+    github: "https://github.com/elaxolotl/weatherApp",
+    type:" web app"
   },
   {
     title: "calculator",
     description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
-    image: "/Calculator.jpg",
+    image: "/calculator.jpg",
     year: "2023",
     link: "https://fluffy-dango-b3438b.netlify.app/",
-    github: "https://github.com/elaxolotl/Calculator"
+    github: "https://github.com/elaxolotl/Calculator",
+    type:" web app"
   },
 
 ];
 
 function Projects() {
-  const [projectsToShow, setProjectsToShow] = useState(3);
+  const [projectsToShow, setProjectsToShow] = useState(2);
   const [showMore, setShowMore] = useState(true);
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
 
   const handleSeeMore = () => {
-    setProjectsToShow(prevCount => prevCount + 3);
+    setProjectsToShow(prevCount => prevCount + 2);
   };
 
   const handleHide = () => {
-    setProjectsToShow(3);
+    setProjectsToShow(2);
     setShowMore(true);
   };
 
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = (index) => {
-    setSelectedProjectIndex(index);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setSelectedProjectIndex(null);
-    setOpen(false);
-  };
 
   return (
     <section id="projects" className="section">
@@ -174,49 +169,21 @@ function Projects() {
       <div className="project-cards">
         {myProjects.slice(0, projectsToShow).map((project, index) => (
           <div className='card' key={index}>
+            <div className='container'>
+              <img src={project.image} alt={project.title} />
+              <div className='project-description'><p>{project.description}</p></div>
+            </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
-              <p className={'description'}>{project.description}</p>
               <div className='project-links'>
               </div>
               <p className='year'>{project.year}</p>
-              <div className='card-button'><Button onClick={() => handleOpen(index)}>Open <GoArrowRight className='arrow' /></Button></div>
-            </div>
-            <div className='image-card'>
-              <Tilt><a href={project.link} target='_blank' rel="noopener noreferrer"><img src={project.image} alt={project.title} /></a></Tilt>
+              <button><a href={project.link}>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
+              <a href={project.github}><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
             </div>
           </div>
         ))}
       </div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        className='modal'
-      >
-        <Box>
-          <Cursor />
-          {selectedProjectIndex !== null && (
-            <>
-              <div>
-                <img src={myProjects[selectedProjectIndex].image} alt={myProjects[selectedProjectIndex].title} />
-              </div>
-              <div>
-                <h1>{myProjects[selectedProjectIndex].title}</h1><br />
-                <p>{myProjects[selectedProjectIndex].description}</p>
-                <Button href={myProjects[selectedProjectIndex].link} target='_blank' rel="noopener noreferrer" sx={{ mt: 3 }}>
-                  View Project
-                </Button>
-                <Button href={myProjects[selectedProjectIndex].github} target='_blank' rel="noopener noreferrer" sx={{ mt: 3 }}>
-                  <PiGithubLogoFill />
-                </Button>
-              </div>
-            </>
-          )}
-
-        </Box>
-      </Modal>
       {showMore && projectsToShow < myProjects.length ? (
         <div className='btn'>
           <button className="clickable-element" id='underlined-element' onClick={handleSeeMore}>

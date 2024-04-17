@@ -4,8 +4,8 @@
 
 :root {
   --gray0: #E5E4DF;
-  --gray1: rgb(188, 188, 188);
-  --gray2: rgba(82, 82, 82);
+  --gray1: rgb(214, 214, 214);
+  --gray2: rgb(47, 47, 47);
   --gray3: #212324;
   --bg-opacity: 1;
 }
@@ -14,14 +14,14 @@
   --bg: var(--gray0);
   --text: var(--gray3);
   --cursor: var(--gray2);
-  --shadow: rgb(33, 35, 36, 0.1)
+  --bg2: var(--gray1);
 }
 
 [data-theme="dark"] {
   --bg: var(--gray3);
   --text: var(--gray0);
   --cursor: var(--gray1);
-  --shadow: rgb(229, 228, 223, 0.1)
+  --bg2: var(--gray2);
 }
 
 /*general styling*/
@@ -93,6 +93,7 @@ nav {
   li {
     display: inline-block;
     margin: 1vh 2vh 0vh 2vh;
+    border: 2px solid transparent;
   }
 
   button {
@@ -104,8 +105,8 @@ nav {
     transition: 0.5s;
     background-color: transparent;
     color: var(--text);
-    border: none;
     border: 2px solid transparent;
+    cursor: pointer;
   }
 
   button:hover {
@@ -135,7 +136,7 @@ nav {
 /*profile*/
 
 #profile {
-  margin: 10vh 15vh 0vh 15vh;
+  margin: 10vh 15vw 0vh 15vw;
   padding-top: 1vh;
   color: var(--text);
 
@@ -159,6 +160,21 @@ nav {
     margin-top: 16vh;
   }
 
+  .profile-contact{
+    background-color: var(--text);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: large;
+    margin: 2vh 0vw;
+    font-family: inherit;
+    padding: 10px 20px;
+    color: var(--bg);
+    a{
+      color: var(--bg);
+    }
+  }
+
   .time {
     display: flex;
     justify-content: space-between;
@@ -170,13 +186,17 @@ nav {
     color: var(--text);
   }
 
+  button:hover{
+    background-color: var(--cursor);
+  }
+
 
 }
 
 /*projects*/
 
 #projects {
-  margin: 0vh 15vh 0vh 15vh;
+  margin: 0vh 15vw 0vh 15vw;
   color: var(--text);
 
   h1 {
@@ -192,83 +212,80 @@ nav {
 
     .card {
       display: flex;
-      gap: 2vh;
-      border: solid 2px var(--gray2);
-      border-radius: 50px;
-      padding: 2vh 5vh;
+      flex-direction: column;
+      gap: 0vw;
+      border: solid 1px var(--gray2);
+      border-radius: 10px;
       transition: 0.5s;
+      width: 30vw;
 
-      img {
-        border-radius: 20px;
-        cursor: pointer;
-        object-fit: cover;
-        width: 64vh;
+      .container{
         height: 25vh;
-      }
-
-      .projects-text {
-        color: var(--text);
-        width: 52.5vh;
-        text-align: left;
-
-        .project-links {
-          font-size: 30px;
-
-          a {
-            color: var(--text);
-            margin: 0px 10px 0px 10px;
-            cursor: pointer;
+        position: relative;
+        img {
+          opacity: 1;
+          transition: .5s ease;
+          backface-visibility: hidden;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          cursor: pointer;
+          object-fit: cover;
+          width: 30vw;
+          height: 25vh;
+        }
+  
+        .project-description{
+          position: absolute;
+          transition: .5s ease;
+          opacity: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          text-align: center;
+          background-color: var(--bg);
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          p{
+            padding: 5vh 5vw;
           }
         }
       }
-
-      h2 {
-        font-size: 4vh;
-        margin-top: 0px;
-        margin-bottom: 1vh;
+      
+      .container:hover .project-description {
+        opacity: 0.9;
       }
 
-      .description- {
-        position: relative;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
+
+      .projects-text {
+        color: var(--text);
+        background-color: var(--cursor);
+        padding: 5px 20px;
+        text-align: left;
+        background-color: var(--bg2);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      h2 {
+        font-size: 3vh;
+        margin-top: 0px;
+        margin-bottom: 0vh;
       }
 
       .year {
-        text-align: left;
-      }
-
-      button {
-        text-transform: none;
         font-size: 2vh;
-        color: var(--bg);
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
-        box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
-        background: linear-gradient( rgb(175, 198, 230), rgb(115, 128, 150));
-        border: solid 2px var(--gray2);   
+      }
+      button{
+        margin: 0;
+        background-color: rgb(159, 159, 159);
+        padding: 2px 5px;
+        border-radius: 5px;
         cursor: pointer;
-        padding: 1vh 2vh 1vh 2vh;
-        border-radius: 50px;
-        font-family: inherit;
-        font-weight: 900;
-        margin: 2vh 0vh;
-        transition: 0.5s;
-        .arrow{
-          margin-bottom: -5px;
-        }
+        margin-right: 1vw;
       }
-      button:hover{
-        background: linear-gradient(rgb(52, 116, 206), rgb(35, 71, 122));
-        color: var(--gray0);
-        box-shadow: inset 0px -5px 10px 0px rgba(147, 170, 202, 0.4);
-        overflow: hidden;
-      }
-    }
-
-    .card:hover {
-      background-color: rgb(52, 116, 206, 0.1);
-      box-shadow: inset rgba(4, 21, 48, 0.1) 0px 0px 40px -12px;
-      cursor: pointer;
     }
 
   }
@@ -287,29 +304,10 @@ nav {
   }
 }
 
-.modal{
-  font-family: 'Rethink Sans', sans-serif;
-  background-color: #212324;
-  color: #E5E4DF;
-  padding: 2vh 5vh;
-  margin: 20vh 50vh;
-  border: solid 3px #404040;
-  border-radius: 30px ;
-  text-align: center;
-  img{
-    margin-left: -2vh;
-    text-align: left;
-    width: 100vh;
-    height: auto;
-    border-radius: 20px;
-  }
-}
-
-
 /*stacks*/
 
 #stacks {
-  margin: 7vh 15vh 10vh 15vh;
+  margin: 7vh 15vw 10vh 15vw;
   color: var(--text);
 
   .icons {
@@ -331,7 +329,7 @@ nav {
 /*contact*/
 
 #contact {
-  margin: 15vh 15vh 7vh 15vh;
+  margin: 15vh 15vw 7vh 15vw;
   color: var(--text);
 
   h3 {
@@ -362,4 +360,23 @@ nav {
     font-size: 2vh;
     cursor: pointer;
   }
+}
+
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(10.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
 }
