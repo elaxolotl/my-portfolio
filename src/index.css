@@ -215,7 +215,7 @@ nav {
       display: flex;
       flex-direction: column;
       gap: 0vw;
-      border: solid 1px var(--gray2);
+      border: none;
       border-radius: 10px;
       transition: 0.5s;
       width: 30vw;
