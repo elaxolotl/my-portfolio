@@ -8,26 +8,12 @@
         display: none;
     }
 
-    .modal {
-        width: 50vh !important;
-        padding: 2vh 5vh;
-        margin: 20vh 50vh;
-
-        img {
-            margin-left: 0vh !important;
-            text-align: left;
-            width: 50vh !important;
-            height: auto;
-            border-radius: 20px;
-        }
-    }
-
 }
 
 @media screen and (max-width:900px) {
     nav {
         li{
-            margin: 1vh 1vh 0vh 1vh !important;
+            margin: 1vh 0.25vw 0vh 0.25vw !important;
         }
     }
 
@@ -42,15 +28,18 @@
 
     #projects {
         .card {
-            width: 70vh;
-
-            img {
-                width: 32vh !important;
-                height: 12vh !important;
+            .container{
+                height: 20vh !important;
+                img {
+                    height: 20vh !important;
+                }
             }
-        }
-        .modal{
-            margin: 0vh !important;
+            .projects-text {
+                height: 100% !important;
+            }      
+            h2 {
+                font-size: 2vh !important;
+              } 
         }
     }
 
@@ -115,52 +104,21 @@
     /*projects*/
 
     #projects {
-        margin: 0vh 5vh 0vh 5vh;
-
-        h3 {
-            text-align: center;
-        }
-
-        .project-cards {
-
-            .card {
-                border: none !important;
-                flex-wrap: wrap;
-                img,
-                .image-card {
-                    width: 70vw !important;
+        .card {
+            width: 50vw !important;
+            .container{
+                height: 20vh !important;
+                img {
                     height: 20vh !important;
-                    object-fit: contain !important;
-                    border-radius:  5px !important;
-                }
-
-                .projects-text {
-                    color: var(--gray3);
-                    width: 26.25vh !important;
-                    text-align: center;
-                }
-
-                h2 {
-                    font-size: 2.5vh !important;
-                }
-
-                .description {
-                    display: none;
-                }
-
-                .year {
-                    font-size: 1.5vh !important;
-                }
-
-                .card-button{
-                    display: none;
+                    width: 50vw !important;
                 }
             }
-        }
-
-        button {
-            margin: 5vh !important;
-            font-size: 1.5vh !important;
+            .projects-text {
+                height: 100% !important;
+            }      
+            h2 {
+                font-size: 2vh !important;
+              } 
         }
     }
 
