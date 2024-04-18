@@ -64,9 +64,10 @@
     /*nav*/
 
     nav {
+        padding: 0vh !important;
 
         li{
-            margin: 0 2vw !important;
+            margin: 0 1vw !important;
             padding: 0 !important;
             button{
                 margin: 0 !important;

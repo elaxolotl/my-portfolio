@@ -10,10 +10,6 @@ import { TbSend } from "react-icons/tb";
 
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
-import Tilt from 'react-parallax-tilt';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
 
 //cursor//
 
@@ -112,7 +108,7 @@ function Profile() {
 const myProjects = [
   {
     title: "Galactic Explorer",
-    description: "a React-based website offering an immersive journey through space exploration",
+    description: "a React-based website for an imaginary company that offers space exploration services",
     image: "/galactic explorer.jpg",
     year: "2024",
     link: "https://sprightly-cuchufli-2c4619.netlify.app/",
@@ -121,7 +117,7 @@ const myProjects = [
   },
   {
     title: "Eye-Track",
-    description: "Interactive eyeballs track cursor movement, demonstrating mouse tracking using HTML, CSS, and JavaScript.",
+    description: "A simple website featuring interactive eyeballs that track cursor movement",
     image: "/eyeTrack.jpg",
     year: "2023",
     link: "https://leafy-rolypoly-67db4e.netlify.app/",
