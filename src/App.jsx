@@ -108,7 +108,7 @@ function Profile() {
 const myProjects = [
   {
     title: "Entre09",
-    description: "A react based website for a freelance company, this project allowed me to get familiar with react components libraries",
+    description: "A react based website for a freelance company. this project allowed me to get familiar with react components libraries",
     image: "/entre09.jpg",
     year: "2024",
     link: "https://main--entre09.netlify.app/",
