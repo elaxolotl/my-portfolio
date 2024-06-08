@@ -37,6 +37,10 @@ body {
   width: 100vw;
 }
 
+#root{
+  height: 100vh;
+}
+
 .app {
   padding-top: 1.5vh;
   background-color: var(--bg);
