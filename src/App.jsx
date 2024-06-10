@@ -143,6 +143,15 @@ const myProjects = [
     type:" web app"
   },
   {
+    title: "HTML canvas",
+    description: "My introduction to HTML canvas, just a bunch of balls bouncing around... try to hover over them!",
+    image: "/html-canvas.jpg",
+    year: "2024",
+    link: "https://rainbow-choux-c5a394.netlify.app/",
+    github: "https://github.com/elaxolotl/HTML5-canvas",
+    type:"canvas  "
+  },
+  {
     title: "calculator",
     description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
     image: "/calculator.jpg",
