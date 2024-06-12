@@ -210,8 +210,8 @@ function Projects() {
               <div className='project-links'>
               </div>
               <p className='year'>{project.year}</p>
-              <button><a href={project.link}>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
-              <a href={project.github}><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
+              <button><a href={project.link} target='_blank'>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
+              <a href={project.github} target='_blank'><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
             </div>
           </div>
         ))}
