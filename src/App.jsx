@@ -125,6 +125,24 @@ const myProjects = [
     type:" web app"
   },
   {
+    title: "Soduku",
+    description: "Just a soduku game made with HTML, CSS, & JavaScript",
+    image: "/sudoku.jpg",
+    year: "2024",
+    link: "https://soduku-ashy.vercel.app/",
+    github: "https://github.com/elaxolotl/soduku",
+    type:" web app"
+  },
+  {
+    title: "The bored button",
+    description: "This is a project I did out of boredom, a button that cures it!",
+    image: "/boredApp.jpg",
+    year: "2024",
+    link: "https://gentle-banoffee-dd4af3.netlify.app/",
+    github: "https://github.com/elaxolotl/Bored-app",
+    type:" web app"
+  },
+  {
     title: "Eye-Track",
     description: "A simple website featuring interactive eyeballs that track cursor movement",
     image: "/eyeTrack.jpg",
