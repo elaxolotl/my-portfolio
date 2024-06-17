@@ -116,6 +116,15 @@ const myProjects = [
     type:"web app"
   },
   {
+    title: "Dispatch",
+    description: "A news website that fetches data from an api.",
+    image: "/dispatch.jpg",
+    year: "2024",
+    link: "https://dainty-medovik-89072b.netlify.app",
+    github: "https://github.com/elaxolotl/Dispatch",
+    type:" web app"
+  },
+  {
     title: "Galactic Explorer",
     description: "a React-based website for an imaginary company that offers space exploration services",
     image: "/galactic explorer.jpg",
@@ -170,7 +179,7 @@ const myProjects = [
     type:"canvas  "
   },
   {
-    title: "calculator",
+    title: "Calculator",
     description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
     image: "/calculator.jpg",
     year: "2023",
