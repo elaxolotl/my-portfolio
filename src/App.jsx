@@ -111,7 +111,7 @@ const myProjects = [
     description: "Ecortie is an ecofriendly product that makes fertilizer out ouf nettles, used coffee grounds, and tea leaves",
     image: "/ecortie.jpg",
     year: "2024",
-    link: "ecortie.netlify.app/",
+    link: "https://ecortie.netlify.app/",
     github: "private",
     type:"web app"
   },
