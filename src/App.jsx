@@ -107,12 +107,12 @@ function Profile() {
 
 const myProjects = [
   {
-    title: "Entre09",
-    description: "A react based website for a freelance company. this project allowed me to get familiar with react components libraries",
-    image: "/entre09.jpg",
+    title: "Ecortie",
+    description: "Ecortie is an ecofriendly product that makes fertilizer out ouf nettles, used coffee grounds, and tea leaves",
+    image: "/ecortie.jpg",
     year: "2024",
-    link: "https://main--entre09.netlify.app/",
-    github: "https://github.com/elaxolotl/entre-09",
+    link: "ecortie.netlify.app/",
+    github: "private",
     type:"web app"
   },
   {
@@ -123,6 +123,15 @@ const myProjects = [
     link: "https://dainty-medovik-89072b.netlify.app",
     github: "https://github.com/elaxolotl/Dispatch",
     type:" web app"
+  },
+  {
+    title: "Entre09",
+    description: "A react based website for a freelance company. this project allowed me to get familiar with react components libraries",
+    image: "/entre09.jpg",
+    year: "2024",
+    link: "https://main--entre09.netlify.app/",
+    github: "https://github.com/elaxolotl/entre-09",
+    type:"web app"
   },
   {
     title: "Galactic Explorer",
