@@ -5,7 +5,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
-import { FaArrowDown } from "react-icons/fa6";
+import { FaArrowDown, FaLock } from "react-icons/fa6";
 import { TbSend } from "react-icons/tb";
 
 import React, { useState } from "react";
@@ -225,12 +225,13 @@ function Projects() {
             </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
-              <div className='project-links'>
-              </div>
               <p className='year'>{project.year}</p>
               <button><a href={project.link} target='_blank'>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
-              <a href={project.github} target='_blank'><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
-            </div>
+              {project.github === "private" ? (
+                <FaLock style={{marginBottom:'-0.5vh'}}/>
+              ) : (
+                <a href={project.github} target='_blank'><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
+              )}            </div>
           </div>
         ))}
       </div>
