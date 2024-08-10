@@ -285,7 +285,7 @@ const myStacks = [
 function Stacks() {
   return (
     <section id='stacks' className='section'>
-      <h3>Skills</h3>
+      <h3>Tech stack</h3>
       <div className='icons'>
         {myStacks.map(function (item) {
           return (
