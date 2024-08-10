@@ -47,7 +47,6 @@ function Cursor() {
 
 //nav//
 
-
 function Nav({ toggleTheme }) {
   return (
     <nav>
@@ -117,7 +116,7 @@ const myProjects = [
   },
   {
     title: "Dispatch",
-    description: "A news website that fetches data from an api.",
+    description: "A news website.",
     image: "/dispatch.jpg",
     year: "2024",
     link: "https://dainty-medovik-89072b.netlify.app",
@@ -126,77 +125,13 @@ const myProjects = [
   },
   {
     title: "Entre09",
-    description: "A react based website for a freelance company. this project allowed me to get familiar with react components libraries",
+    description: "A react based website for a freelance company.",
     image: "/entre09.jpg",
     year: "2024",
     link: "https://main--entre09.netlify.app/",
     github: "https://github.com/elaxolotl/entre-09",
     type:"web app"
   },
-  {
-    title: "Galactic Explorer",
-    description: "a React-based website for an imaginary company that offers space exploration services",
-    image: "/galactic explorer.jpg",
-    year: "2024",
-    link: "https://sprightly-cuchufli-2c4619.netlify.app/",
-    github: "https://github.com/elaxolotl/galactic-explorer",
-    type:" web app"
-  },
-  {
-    title: "Soduku",
-    description: "Just a soduku game made with HTML, CSS, & JavaScript",
-    image: "/sudoku.jpg",
-    year: "2024",
-    link: "https://soduku-ashy.vercel.app/",
-    github: "https://github.com/elaxolotl/soduku",
-    type:" web app"
-  },
-  {
-    title: "The bored button",
-    description: "This is a project I did out of boredom, a button that cures it!",
-    image: "/boredApp.jpg",
-    year: "2024",
-    link: "https://gentle-banoffee-dd4af3.netlify.app/",
-    github: "https://github.com/elaxolotl/Bored-app",
-    type:" web app"
-  },
-  {
-    title: "Eye-Track",
-    description: "A simple website featuring interactive eyeballs that track cursor movement",
-    image: "/eyeTrack.jpg",
-    year: "2023",
-    link: "https://leafy-rolypoly-67db4e.netlify.app/",
-    github: "https://github.com/elaxolotl/Eye-Tracker",
-    type:" web app"
-  },
-  {
-    title: "Weather app",
-    description: "Real-time weather app fetching data from WeatherAPI, allowing users to get weather info for different locations.",
-    image: "/weather app.jpg",
-    year: "2023",
-    link: "https://transcendent-peony-2bf5a2.netlify.app/",
-    github: "https://github.com/elaxolotl/weatherApp",
-    type:" web app"
-  },
-  {
-    title: "HTML canvas",
-    description: "My introduction to HTML canvas, just a bunch of balls bouncing around... try to hover over them!",
-    image: "/html-canvas.jpg",
-    year: "2024",
-    link: "https://rainbow-choux-c5a394.netlify.app/",
-    github: "https://github.com/elaxolotl/HTML5-canvas",
-    type:"canvas  "
-  },
-  {
-    title: "Calculator",
-    description: "One of my earliest projects, a straightforward calculator for basic arithmetic operations.",
-    image: "/calculator.jpg",
-    year: "2023",
-    link: "https://fluffy-dango-b3438b.netlify.app/",
-    github: "https://github.com/elaxolotl/Calculator",
-    type:" web app"
-  },
-
 ];
 
 function Projects() {
