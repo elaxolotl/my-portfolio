@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 /*dark & light modes*/
 
@@ -44,7 +44,7 @@ body {
 .app {
   padding-top: 1.5vh;
   background-color: var(--bg);
-  font-family: 'Rethink Sans', sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   transition: 0.3s;
   height: auto;
 }
@@ -59,7 +59,7 @@ a {
 }
 
 #paragraph {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 6vh;
   transition: 0.3s;
 }
