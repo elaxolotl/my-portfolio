@@ -7,7 +7,6 @@ import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
 import { FaArrowDown, FaLock } from "react-icons/fa6";
 import { TbSend } from "react-icons/tb";
-
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 
@@ -243,8 +242,8 @@ function Contact() {
       <h1 id="paragraph">If you want to get in touch, you can <span id="underlined-element" className="clickable-element"><a href="mailto:youssefechadysfaxi@gmail.com">email
         me</a></span> or visit <span id="underlined-element" className="clickable-element"><a
           href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/" target="_blank">my Linkedin</a></span>.
-        You can also <span id="underlined-element" className="clickable-element"><a href="assets/Resume.pdf"
-          download="assets/Resume.pdf">
+        You can also <span id="underlined-element" className="clickable-element"><a href="/Resume-YoussefEchadySfaxi.pdf"
+          download="/Resume-YoussefEchadySfaxi.pdf">
           download my resume</a></span> or <span id="underlined-element" className="clickable-element">
           <a href="https://github.com/elaxolotl" target="_blank">check my Github</a></span> for more information about me!
       </h1>
