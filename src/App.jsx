@@ -123,12 +123,12 @@ const myProjects = [
     type:" web app"
   },
   {
-    title: "Entre09",
-    description: "A react based website for a freelance company.",
-    image: "/entre09.jpg",
-    year: "2024",
-    link: "https://main--entre09.netlify.app/",
-    github: "https://github.com/elaxolotl/entre-09",
+    title: "El Frigo",
+    description: "A web app that suggests recipes based on user-input ingredients. Built with Next.js, Tailwind CSS, and the Spoonacular API.",
+    image: "/el-frigo.jpg",
+    year: "2025",
+    link: "https://el-frigo.vercel.app",
+    github: "https://github.com/elaxolotl/el-frigo",
     type:"web app"
   },
 ];
