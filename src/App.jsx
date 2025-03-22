@@ -1,17 +1,18 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaJava } from "react-icons/fa";
+import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt} from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiFlask } from "react-icons/si";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
-import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
+import { PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
 import { FaArrowDown, FaLock } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
+import { DiSqllite } from "react-icons/di";
 
 //cursor//
 
@@ -222,16 +223,6 @@ function Projects() {
 
 const myStacks = [
   {
-    name: "Html",
-    icon: <FaHtml5 />,
-    color: "#DD4B25"
-  },
-  {
-    name: "Css",
-    icon: <FaCss3Alt />,
-    color: "#2862E9"
-  },
-  {
     name: "Javascript",
     icon: <IoLogoJavascript />,
     color: "#F7D724"
@@ -242,8 +233,18 @@ const myStacks = [
     color: "#5ED3F3"
   },
   {
+    name: "Python",
+    icon: <FaPython />,
+    color: "#FFD43B"
+  },
+  {
+    name: "Java",
+    icon: <FaJava />,
+    color: "#007396"
+  },
+  {
     name: "SQL",
-    icon: <PiFileSqlFill />,
+    icon: <DiSqllite  />,
     color: "#00B6EA"
   }
 ]
