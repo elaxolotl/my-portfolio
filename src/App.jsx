@@ -1,6 +1,8 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp } from "react-icons/fa";
+import { FaLinkedin, FaHtml5, FaCss3Alt, FaReact, FaFacebookSquare, FaArrowUp, FaJava } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiFlask } from "react-icons/si";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
@@ -112,7 +114,8 @@ const myProjects = [
     year: "2024",
     link: "https://ecortie.netlify.app/",
     github: "private",
-    type:"web app"
+    type:"web app",
+    tech: <><FaReact />&nbsp;<FaCss3Alt /></>
   },
   {
     title: "Gavel",
@@ -121,7 +124,8 @@ const myProjects = [
     year: "2025",
     link: "none",
     github: "https://github.com/elaxolotl/Gavel",
-    type:"web service"
+    type:"web service",
+    tech: <SiFlask />
   },
   {
     title: "Agrinexus",
@@ -130,7 +134,8 @@ const myProjects = [
     year: "2025",
     link: "none",
     github: "https://github.com/AminelMhl/AgriNexus",
-    type:"desktop app"
+    type:"desktop app",
+    tech: <FaJava />
   },
   {
     title: "Dispatch",
@@ -139,7 +144,8 @@ const myProjects = [
     year: "2024",
     link: "https://dainty-medovik-89072b.netlify.app",
     github: "https://github.com/elaxolotl/Dispatch",
-    type:"web app"
+    type:"web app",
+    tech: <><FaReact />&nbsp;<FaCss3Alt /></>
   },
   {
     title: "El Frigo",
@@ -148,7 +154,9 @@ const myProjects = [
     year: "2025",
     link: "https://el-frigo.vercel.app",
     github: "https://github.com/elaxolotl/el-frigo",
-    type:"web app"
+    type:"web app",
+    tech: <><RiNextjsFill />&nbsp;<RiTailwindCssFill /></>
+
   },
 ];
 
@@ -174,7 +182,7 @@ function Projects() {
           <div className='card' key={index}>
             <div className='container'>
               <img src={project.image} alt={project.title} />
-              <div className='project-description'><p>{project.description}</p></div>
+              <div className='project-description'><p>{project.description}<br/><div style={{marginTop:"1vh"}}>{project.tech}</div></p></div>
             </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
@@ -188,7 +196,8 @@ function Projects() {
                 <FaLock style={{marginBottom:'-0.5vh'}}/>
               ) : (
                 <a href={project.github} target='_blank'><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
-              )}            </div>
+              )}
+              </div>
           </div>
         ))}
       </div>
