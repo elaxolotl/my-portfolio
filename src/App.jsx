@@ -6,6 +6,7 @@ import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiFileSqlFill, PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
 import { FaArrowDown, FaLock } from "react-icons/fa6";
+import { FaEyeSlash } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
@@ -169,7 +170,11 @@ function Projects() {
             <div className='projects-text'>
               <h2>{project.title}</h2>
               <p className='year'>{project.year}</p>
-              <button><a href={project.link} target='_blank'>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
+              {project.link === "none" ? (
+                <FaEyeSlash style={{marginBottom:'-0.3vh', marginRight:'1vw'}}/>
+              ) : (
+                <button><a href={project.link} target='_blank'>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
+              )}
               {project.github === "private" ? (
                 <FaLock style={{marginBottom:'-0.5vh'}}/>
               ) : (
