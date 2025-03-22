@@ -124,13 +124,22 @@ const myProjects = [
     type:"web service"
   },
   {
+    title: "Agrinexus",
+    description: "An app to help farmers forecast their yield based on a periodic rainfall data.",
+    image: "/agrinexus.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/AminelMhl/AgriNexus",
+    type:"desktop app"
+  },
+  {
     title: "Dispatch",
     description: "A news website.",
     image: "/dispatch.jpg",
     year: "2024",
     link: "https://dainty-medovik-89072b.netlify.app",
     github: "https://github.com/elaxolotl/Dispatch",
-    type:" web app"
+    type:"web app"
   },
   {
     title: "El Frigo",
