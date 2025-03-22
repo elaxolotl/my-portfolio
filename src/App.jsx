@@ -114,8 +114,8 @@ const myProjects = [
     image: "/ecortie.jpg",
     year: "2024",
     link: "https://ecortie.netlify.app/",
-    github: "private",
-    type:"web app",
+    github: "https://github.com/elaxolotl/ecortie",
+    type:"website",
     tech: <><FaReact />&nbsp;<FaCss3Alt /></>
   },
   {
