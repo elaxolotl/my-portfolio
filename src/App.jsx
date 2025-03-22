@@ -114,6 +114,15 @@ const myProjects = [
     type:"web app"
   },
   {
+    title: "Gavel",
+    description: "An API that manages auctions for detained goods in Tunisian ports.",
+    image: "/gavel.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/elaxolotl/Gavel",
+    type:"web service"
+  },
+  {
     title: "Dispatch",
     description: "A news website.",
     image: "/dispatch.jpg",
