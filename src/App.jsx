@@ -169,7 +169,7 @@ function Projects() {
             </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
-              <p className='year'>{project.year}</p>
+              <p className='year'>{project.year} | {project.type}</p>
               {project.link === "none" ? (
                 <FaEyeSlash style={{marginBottom:'-0.3vh', marginRight:'1vw'}}/>
               ) : (
