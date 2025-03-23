@@ -109,14 +109,14 @@ function Profile() {
 
 const myProjects = [
   {
-    title: "Ecortie",
-    description: "Ecortie is an ecofriendly product that makes fertilizer out ouf nettles, used coffee grounds, and tea leaves",
-    image: "/ecortie.jpg",
-    year: "2024",
-    link: "https://ecortie.netlify.app/",
-    github: "https://github.com/elaxolotl/ecortie",
-    type:"website",
-    tech: <><FaReact />&nbsp;<FaCss3Alt /></>
+    title: "Hive",
+    description: "Hive is an extension of Conway's game of life with new aging and lifespan features for cells.",
+    image: "/hive.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/elaxolotl/hive",
+    type:"simulation",
+    tech: <FaJava />
   },
   {
     title: "Gavel",
@@ -127,6 +127,16 @@ const myProjects = [
     github: "https://github.com/elaxolotl/Gavel",
     type:"web service",
     tech: <SiFlask />
+  },
+  {
+    title: "Ecortie",
+    description: "Ecortie is an ecofriendly product that makes fertilizer out ouf nettles, used coffee grounds, and tea leaves",
+    image: "/ecortie.jpg",
+    year: "2024",
+    link: "https://ecortie.netlify.app/",
+    github: "https://github.com/elaxolotl/ecortie",
+    type:"website",
+    tech: <><FaReact />&nbsp;<FaCss3Alt /></>
   },
   {
     title: "Agrinexus",
