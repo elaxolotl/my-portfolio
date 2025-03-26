@@ -12,7 +12,9 @@ import { FaEyeSlash } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
-import { DiSqllite } from "react-icons/di";
+import { SiMysql } from "react-icons/si";
+import { TbBrandJavascript } from "react-icons/tb";
+
 
 //cursor//
 
@@ -233,9 +235,14 @@ function Projects() {
 
 const myStacks = [
   {
-    name: "Javascript",
-    icon: <IoLogoJavascript />,
-    color: "#F7D724"
+    name: "JavaScript",
+    icon: <TbBrandJavascript />,
+    color: "#F7DF1E"
+  },
+  {
+    name: "Flask",
+    icon: <SiFlask />,
+    color: "#FFFFFF"
   },
   {
     name: "React",
@@ -243,18 +250,13 @@ const myStacks = [
     color: "#5ED3F3"
   },
   {
-    name: "Python",
-    icon: <FaPython />,
-    color: "#FFD43B"
-  },
-  {
     name: "Java",
     icon: <FaJava />,
-    color: "#007396"
+    color: "#f89820"
   },
   {
     name: "SQL",
-    icon: <DiSqllite  />,
+    icon: <SiMysql  />,
     color: "#00B6EA"
   }
 ]
@@ -267,7 +269,7 @@ function Stacks() {
         {myStacks.map(function (item) {
           return (
             <div className='icon'>
-              <p style={{ color: `${item.color}` }}>{item.icon}</p>
+              <p>{item.icon}</p>
               <h4>{item.name}</h4>
             </div>);
         })}
