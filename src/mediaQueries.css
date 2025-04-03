@@ -131,18 +131,16 @@
     /*stacks*/
 
     #stacks {
-        margin: 7vh 5vh 10vh 5vh !important;
-
+      
         .icons {
-            flex-wrap: wrap;
+          gap: 2vw !important;
+          margin-top: 2vh !important;
         }
-
+      
         .icon {
-            font-size: 7vh !important;
-            margin: 5vh 5vh 0vh 0vh;
+          font-size: 4.5vw !important;
         }
-
-    }
+      }
 
     /*contact*/
 
