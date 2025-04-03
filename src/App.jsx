@@ -1,8 +1,8 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt} from "react-icons/fa";
+import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5} from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiFlask } from "react-icons/si";
+import { SiFlask, SiR } from "react-icons/si";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiGithubLogoFill } from "react-icons/pi";
@@ -237,7 +237,7 @@ const myStacks = [
   {
     name: "JavaScript",
     icon: <TbBrandJavascript />,
-    color: "#F7DF1E"
+    color: "#ede7b4"
   },
   {
     name: "Flask",
@@ -247,17 +247,47 @@ const myStacks = [
   {
     name: "React",
     icon: <FaReact />,
-    color: "#5ED3F3"
+    color: "#a8d6e3"
   },
   {
     name: "Java",
     icon: <FaJava />,
-    color: "#f89820"
+    color: "#e0b884"
   },
   {
     name: "SQL",
     icon: <SiMysql  />,
-    color: "#00B6EA"
+    color: "#9ddbed"
+  },
+  {
+    name: "Python",
+    icon: <FaPython />,
+    color: "#f7dfad"
+  },
+  {
+    name: "R",
+    icon: <SiR />,
+    color: "#81a7d6"
+  },
+  {
+    name: "HTML5",
+    icon: <FaHtml5 />,
+    color: "#f7baab"
+  },
+  {
+    name: "CSS3",
+    icon: <FaCss3Alt />,
+    color: "#a5b5f0"
+  },
+  {
+    name: "Next.js",
+    icon: <RiNextjsFill />,
+    color: "#cccccc"
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <RiTailwindCssFill />,
+    color: "#b6f0ed"
   }
 ]
 
@@ -268,9 +298,9 @@ function Stacks() {
       <div className='icons'>
         {myStacks.map(function (item) {
           return (
-            <div className='icon'>
-              <p>{item.icon}</p>
-              <h4>{item.name}</h4>
+            <div key={item.index} style={{ backgroundColor: item.color }} className='icon'>
+              {item.icon}
+              {item.name}
             </div>);
         })}
       </div>

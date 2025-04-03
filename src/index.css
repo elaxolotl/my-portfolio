@@ -306,12 +306,19 @@ nav {
   .icons {
     display: flex;
     flex-wrap: wrap;
+    gap: 1vw;
+    margin-top: 5vh;
   }
 
   .icon {
     text-align: center;
-    font-size: 7.34vh;
-    margin: 5.5vh 5.5vh 0vh 0vh;
+    font-size: 1.2vw;
+    padding: 1vh 3vh;
+    border-radius: 50px;
+    color: var(--gray3);
+    display: flex;
+    gap: 0.2vw;
+    align-items: center;
   }
 
   h4 {
