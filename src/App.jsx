@@ -14,7 +14,8 @@ import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import { SiMysql } from "react-icons/si";
 import { TbBrandJavascript } from "react-icons/tb";
-
+//motion
+import { motion } from "framer-motion";
 
 //cursor//
 
@@ -88,7 +89,7 @@ function Profile() {
   return (
     <section id="profile" className="section">
       <div className="section">
-        <h1 id="paragraph">Hi!<span className="wave">👋</span> My name is <span id="underlined-element" className="clickable-element">
+        <h1 id="paragraph">Hi! My name is <span id="underlined-element" className="clickable-element">
           Youssef
           <img className="profile-image" src="/youssef.jpg"></img>
         </span>
@@ -369,11 +370,17 @@ function App() {
     <div data-theme={isDark ? "dark" : "light"} className='app'>
       <Cursor />
       <Nav toggleTheme={toggleTheme} />
-      <Profile />
-      <Projects />
-      <Stacks />
-      <Contact />
-      <Footer />
+      <motion.div
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <Profile />
+      </motion.div>
+        <Projects />
+        <Stacks />
+        <Contact />
+        <Footer />
     </div>
   )
 }
