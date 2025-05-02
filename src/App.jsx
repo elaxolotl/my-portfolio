@@ -2,7 +2,7 @@ import './mediaQueries.css';
 //icons
 import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5} from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiFlask, SiR } from "react-icons/si";
+import { SiFlask, SiR, SiKotlin } from "react-icons/si";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
 import { PiGithubLogoFill } from "react-icons/pi";
@@ -289,6 +289,11 @@ const myStacks = [
     name: "Tailwind CSS",
     icon: <RiTailwindCssFill />,
     color: "#b6f0ed"
+  },
+  {
+    name: "Kotlin",
+    icon: <SiKotlin  />,
+    color: "#dd9ae3"
   }
 ]
 
