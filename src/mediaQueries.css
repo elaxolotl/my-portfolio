@@ -12,7 +12,7 @@
 
 @media screen and (max-width:900px) {
     nav {
-        li{
+        li {
             margin: 1vh 0.25vw 0vh 0.25vw !important;
         }
     }
@@ -28,18 +28,21 @@
 
     #projects {
         .card {
-            .container{
+            .container {
                 height: 20vh !important;
+
                 img {
                     height: 20vh !important;
                 }
             }
+
             .projects-text {
                 height: 100% !important;
-            }      
+            }
+
             h2 {
                 font-size: 2vh !important;
-              } 
+            }
         }
     }
 
@@ -66,10 +69,15 @@
     nav {
         padding: 0vh !important;
 
-        li{
+        ul li:first-child {
+            padding: 20px !important;
+        }
+
+        li {
             margin: 0 1vw !important;
             padding: 0 !important;
-            button{
+
+            button {
                 margin: 0 !important;
                 padding: 0 !important;
                 font-size: 3vw !important;
@@ -107,40 +115,45 @@
     #projects {
         .card {
             width: 50vw !important;
-            .container{
+
+            .container {
                 height: 20vh !important;
+
                 img {
                     height: 20vh !important;
                     width: 50vw !important;
                 }
-                .project-description{
-                    p{
-                      padding: 20% 2% !important;
+
+                .project-description {
+                    p {
+                        padding: 20% 2% !important;
                     }
-                  }
+                }
             }
+
             .projects-text {
                 height: 100% !important;
-            }      
+            }
+
             h2 {
                 font-size: 2vh !important;
-              } 
+            }
         }
     }
 
     /*stacks*/
 
     #stacks {
-      
+
         .icons {
-          gap: 2vw !important;
-          margin-top: 2vh !important;
+            gap: 2vw !important;
+            margin-top: 2vh !important;
         }
-      
+
         .icon {
-          font-size: 4.5vw !important;
+            font-size: 4.5vw !important;
         }
-      }
+    }
 
     /*contact*/
 

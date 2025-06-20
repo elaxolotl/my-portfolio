@@ -112,7 +112,17 @@ function Profile() {
 
 const myProjects = [
   {
-    title: "Hive",
+    title: "Ant Colony Optimization simulation",
+    description: "An ACO algorithm that finds the optimal path in a composite objective algorithm with distance and elevation variables.",
+    image: "/ACO.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/elaxolotl/ACO-simulation",
+    type:"simulation",
+    tech: <FaJava />
+  },
+  {
+    title: "Hive: game of life with aging mechanics",
     description: "Hive is an extension of Conway's game of life with new aging and lifespan features for cells.",
     image: "/hive.jpg",
     year: "2025",
@@ -122,7 +132,7 @@ const myProjects = [
     tech: <FaJava />
   },
   {
-    title: "Gavel",
+    title: "Gavel: an API for managing detained goods",
     description: "An API that manages auctions for detained goods in Tunisian ports.",
     image: "/gavel.jpg",
     year: "2025",
