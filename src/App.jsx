@@ -14,8 +14,6 @@ import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import { SiMysql } from "react-icons/si";
 import { TbBrandJavascript } from "react-icons/tb";
-//motion
-import { motion } from "framer-motion";
 
 //cursor//
 
@@ -385,13 +383,7 @@ function App() {
     <div data-theme={isDark ? "dark" : "light"} className='app'>
       <Cursor />
       <Nav toggleTheme={toggleTheme} />
-      <motion.div
-      initial={{ opacity: 0, y: 20 }} 
-      animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 1, ease: "easeOut" }}
-      >
         <Profile />
-      </motion.div>
         <Projects />
         <Stacks />
         <Contact />
