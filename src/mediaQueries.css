@@ -114,19 +114,20 @@
 
     #projects {
         .card {
-            width: 50vw !important;
+            width: 80vw !important;
 
             .container {
-                height: 20vh !important;
+                height: 100% !important;
 
                 img {
-                    height: 20vh !important;
-                    width: 50vw !important;
+                    height: auto !important;
+                    width: 80vw !important;
                 }
 
                 .project-description {
+                    
                     p {
-                        padding: 20% 2% !important;
+                        padding: 10% 5% !important;
                     }
                 }
             }

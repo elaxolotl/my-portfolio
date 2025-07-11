@@ -60,7 +60,7 @@ function Nav({ toggleTheme }) {
         <li ><a href="#stacks"><button>Skills</button></a></li>
         <li><a href="#contact"><button>Contact</button></a></li>
       </ul>
-      <button id="changeTheme" role="none" role="button" className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
+      <button id="changeTheme" role="none" className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
       </button>
     </nav>
   );
