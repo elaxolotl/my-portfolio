@@ -68,6 +68,11 @@
 
     nav {
         padding: 0vh !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        width: 90% !important;
 
         ul li:first-child {
             padding: 20px !important;
@@ -95,6 +100,10 @@
 
     #profile {
         margin: 7vh 5vh 0vh 5vh !important;
+
+        .section {
+            line-height: 6vh !important;
+        }
 
         img {
             width: auto;
@@ -125,7 +134,7 @@
                 }
 
                 .project-description {
-                    
+
                     p {
                         padding: 10% 5% !important;
                     }
@@ -145,6 +154,8 @@
     /*stacks*/
 
     #stacks {
+
+        margin: 7vh 10vw 10vh 10vw !important;
 
         .icons {
             gap: 2vw !important;
