@@ -60,7 +60,7 @@ function Nav({ toggleTheme }) {
         <li ><a href="#stacks"><button>Skills</button></a></li>
         <li><a href="#contact"><button>Contact</button></a></li>
       </ul>
-      <button className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
+      <button id="changeTheme" role="none" role="button" className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
       </button>
     </nav>
   );
@@ -89,11 +89,11 @@ function Profile() {
       <div className="section">
         <h1 id="paragraph">Hi! My name is <span id="underlined-element" className="clickable-element">
           Youssef
-          <img className="profile-image" src="/youssef.jpg"></img>
+          <img className="profile-image" src="/youssef.jpg" alt="my image"></img>
         </span>
           I'm an IT and Business Analytics Student at <span id="underlined-element" className="clickable-element">
             Tunis Business School.
-            <img className="profile-image" src="/tbs.jpg"></img>
+            <img className="profile-image" src="/tbs.jpg" alt='picture of Tunis Business School'></img>
           </span>
         </h1>
         <button className='profile-contact'><a href='mailto: youssefechadysfaxi@gmail.com'>Say hello </a><TbSend /></button>
