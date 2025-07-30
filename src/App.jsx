@@ -120,16 +120,6 @@ const myProjects = [
     tech: <FaJava />
   },
   {
-    title: "Hive: game of life with aging mechanics",
-    description: "Hive is an extension of Conway's game of life with new aging and lifespan features for cells.",
-    image: "/hive.jpg",
-    year: "2025",
-    link: "none",
-    github: "https://github.com/elaxolotl/hive",
-    type:"simulation",
-    tech: <FaJava />
-  },
-  {
     title: "Gavel: an API for managing detained goods",
     description: "An API that manages auctions for detained goods in Tunisian ports.",
     image: "/gavel.jpg",
@@ -138,6 +128,16 @@ const myProjects = [
     github: "https://github.com/elaxolotl/Gavel",
     type:"web service",
     tech: <SiFlask />
+  },
+  {
+    title: "Hive: game of life with aging mechanics",
+    description: "Hive is an extension of Conway's game of life with new aging and lifespan features for cells.",
+    image: "/hive.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/elaxolotl/hive",
+    type:"simulation",
+    tech: <FaJava />
   },
   {
     title: "Ecortie",
