@@ -124,7 +124,7 @@ const myProjects = [
     description: "An API that manages auctions for detained goods in Tunisian ports.",
     image: "/gavel.jpg",
     year: "2025",
-    link: "none",
+    link: "https://gavel-elaxolotl-elaxolotls-projects.vercel.app",
     github: "https://github.com/elaxolotl/Gavel",
     type:"web service",
     tech: <SiFlask />
