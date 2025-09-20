@@ -119,6 +119,16 @@ const myProjects = [
     type:"simulation",
     tech: <FaJava />
   },
+    {
+    title: "Tunisair delay predictor",
+    description: "ML model that predicts flight delay in minutes using a TunisAir dataset, built with CatBoost.",
+    image: "/tunisair delay.jpg",
+    year: "2025",
+    link: "none",
+    github: "https://github.com/elaxolotl/flight-delay-prediction",
+    type:"machine learning",
+    tech: <FaPython />
+  },
   {
     title: "Gavel: an API for managing detained goods",
     description: "An API that manages auctions for detained goods in Tunisian ports.",
