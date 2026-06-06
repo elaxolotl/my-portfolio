@@ -53,16 +53,11 @@ function Cursor() {
 
 function Nav({ toggleTheme }) {
   return (
-    <nav>
-      <ul className="nav-links">
-        <li ><a href="#profile"><button>Me</button></a></li>
-        <li ><a href="#projects"><button>Projects</button></a></li>
-        <li ><a href="#stacks"><button>Skills</button></a></li>
-        <li><a href="#contact"><button>Contact</button></a></li>
-      </ul>
-      <button id="changeTheme" role="none" className="mode" onClick={toggleTheme}><BsFillMoonStarsFill />
+    <div className="nav-button-container">
+      <button id="changeTheme" role="none" className="mode" onClick={toggleTheme}>
+        <BsFillMoonStarsFill />
       </button>
-    </nav>
+    </div>
   );
 }
 
