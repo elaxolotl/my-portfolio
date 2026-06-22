@@ -1,22 +1,20 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5} from "react-icons/fa";
+import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5 } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiFlask, SiR, SiKotlin } from "react-icons/si";
-import { BsFillMoonStarsFill } from "react-icons/bs";
-import { IoLogoJavascript, IoOpenOutline } from "react-icons/io5";
+import React, { useState } from "react";
+import AnimatedCursor from "react-animated-cursor";
+import { SiMysql } from "react-icons/si";
+import { TbBrandJavascript } from "react-icons/tb";
+import { IoOpenOutline } from "react-icons/io5";
 import { PiGithubLogoFill } from "react-icons/pi";
 import { IoIosMail } from "react-icons/io";
 import { FaArrowDown, FaLock } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
-import React, { useState } from "react";
-import AnimatedCursor from "react-animated-cursor";
-import { SiMysql } from "react-icons/si";
-import { TbBrandJavascript } from "react-icons/tb";
 
 //cursor//
-
 function Cursor() {
   return (
     <div id='cursor'>
@@ -49,20 +47,29 @@ function Cursor() {
   );
 }
 
-//nav//
+// helper to convert hex color to rgba string for subtle shadows
+function hexToRgba(hex, alpha = 0.16) {
+  if (!hex) return `rgba(0,0,0,${alpha})`;
+  const normalized = hex.replace('#', '');
+  const bigint = parseInt(normalized, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
-function Nav({ toggleTheme }) {
+//nav//
+function Nav({ toggleTheme, isDark }) {
   return (
     <div className="nav-button-container">
       <button id="changeTheme" role="none" className="mode" onClick={toggleTheme}>
-        <BsFillMoonStarsFill />
+        {isDark ? <i className="hn hn-sun-solid"></i> : <i className="hn hn-moon-solid"></i>}
       </button>
     </div>
   );
 }
 
 //profile//
-
 function getTime() {
   const today = new Date();
   let h = today.getHours();
@@ -86,12 +93,12 @@ function Profile() {
           Youssef
           <img className="profile-image" src="/youssef.jpg" alt="my image"></img>
         </span>
-          I'm an IT and Business Analytics Student at <span id="underlined-element" className="clickable-element">
+          I'm an IT and Business Analytics graduate from <span id="underlined-element" className="clickable-element">
             Tunis Business School.
             <img className="profile-image" src="/tbs.jpg" alt='picture of Tunis Business School'></img>
           </span>
         </h1>
-        <button className='profile-contact'><a href='mailto: youssefechadysfaxi@gmail.com'>Say hello </a><TbSend /></button>
+        <button className='profile-contact'><a href='mailto: youssefechadysfaxi@gmail.com'>Say hello </a><i class="hn hn-comment-dots-solid"></i></button>
       </div>
       <div className="time">
         <div className="arrow"><a href='#projects'><FaArrowDown /></a></div>
@@ -102,89 +109,73 @@ function Profile() {
 }
 
 //projects//
-
 const myProjects = [
   {
     title: "Ant Colony Optimization simulation",
     description: "An ACO algorithm that finds the optimal path in a composite objective algorithm with distance and elevation variables.",
-    image: "/ACO.jpg",
+    emoji: <i className="hn hn-chart-network-solid"></i>,
+    color: "#a58eff",
     year: "2025",
     link: "none",
     github: "https://github.com/elaxolotl/ACO-simulation",
-    type:"simulation",
+    type: "simulation",
     tech: <FaJava />
   },
-    {
+  {
     title: "Tunisair delay predictor",
     description: "ML model that predicts flight delay in minutes using a TunisAir dataset, built with CatBoost.",
-    image: "/tunisair delay.jpg",
+    emoji: <i className="hn hn-plane-solid"></i>,
+    color: "#7ec8ff",
     year: "2025",
     link: "none",
     github: "https://github.com/elaxolotl/flight-delay-prediction",
-    type:"machine learning",
+    type: "machine learning",
     tech: <FaPython />
   },
   {
     title: "Gavel: an API for managing detained goods",
     description: "An API that manages auctions for detained goods in Tunisian ports.",
-    image: "/gavel.jpg",
+    emoji: <i className="hn hn-bullhorn"></i>,
+    color: "#8fbf9f",
     year: "2025",
     link: "https://gavel-elaxolotl-elaxolotls-projects.vercel.app",
     github: "https://github.com/elaxolotl/Gavel",
-    type:"web service",
+    type: "web service",
     tech: <SiFlask />
   },
   {
     title: "Hive: game of life with aging mechanics",
     description: "Hive is an extension of Conway's game of life with new aging and lifespan features for cells.",
-    image: "/hive.jpg",
+    emoji: <i className="hn hn-grid-solid"></i>,
+    color: "#ffd27a",
     year: "2025",
     link: "none",
     github: "https://github.com/elaxolotl/hive",
-    type:"simulation",
+    type: "simulation",
     tech: <FaJava />
   },
   {
     title: "Ecortie",
-    description: "Ecortie is an ecofriendly product that makes fertilizer out ouf nettles, used coffee grounds, and tea leaves",
-    image: "/ecortie.jpg",
+    description: "Ecortie is an ecofriendly product that makes fertilizer out of nettles, used coffee grounds, and tea leaves.",
+    emoji: <i className="hn hn-seedlings-solid"></i>,
+    color: "#6fbf6f",
     year: "2024",
     link: "https://ecortie.netlify.app/",
     github: "https://github.com/elaxolotl/ecortie",
-    type:"website",
+    type: "website",
     tech: <><FaReact />&nbsp;<FaCss3Alt /></>
-  },
-  {
-    title: "Agrinexus",
-    description: "An app to help farmers forecast their yield based on a periodic rainfall data.",
-    image: "/agrinexus.jpg",
-    year: "2025",
-    link: "none",
-    github: "https://github.com/AminelMhl/AgriNexus",
-    type:"desktop app",
-    tech: <FaJava />
   },
   {
     title: "Dispatch",
     description: "A news website.",
-    image: "/dispatch.jpg",
+    emoji: <i className="hn hn-newspaper-solid"></i>,
+    color: "#d0d0d0",
     year: "2024",
     link: "https://dainty-medovik-89072b.netlify.app",
     github: "https://github.com/elaxolotl/Dispatch",
-    type:"web app",
+    type: "web app",
     tech: <><FaReact />&nbsp;<FaCss3Alt /></>
-  },
-  {
-    title: "El Frigo",
-    description: "A web app that suggests recipes based on user-input ingredients. Built with Next.js, Tailwind CSS, and the Spoonacular API.",
-    image: "/el-frigo.jpg",
-    year: "2025",
-    link: "https://el-frigo.vercel.app",
-    github: "https://github.com/elaxolotl/el-frigo",
-    type:"web app",
-    tech: <><RiNextjsFill />&nbsp;<RiTailwindCssFill /></>
-
-  },
+  }
 ];
 
 function Projects() {
@@ -200,47 +191,86 @@ function Projects() {
     setShowMore(true);
   };
 
-
   return (
     <section id="projects" className="section">
-      <h3 id="title">My projects</h3>
+      <h3 id="title">projects.</h3>
       <div className="project-cards">
         {myProjects.slice(0, projectsToShow).map((project, index) => (
-          <div className='card' key={index}>
-            <div className='container'>
-              <img src={project.image} alt={project.title} />
-              <div className='project-description'><p>{project.description}<br/><div style={{marginTop:"1vh"}}>{project.tech}</div></p></div>
+          <div className='card' key={index} style={{ ['--accent']: hexToRgba(project.color || '#000000', 0.12) }}>
+            <div className='project-card-header'>
+              <span className='project-emoji' aria-hidden="true" style={{ color: project.color }}>{project.emoji}</span>
+              <span className='project-year'>{project.year}</span>
             </div>
             <div className='projects-text'>
               <h2>{project.title}</h2>
-              <p className='year'>{project.year} | {project.type}</p>
-              {project.link === "none" ? (
-                <FaEyeSlash style={{marginBottom:'-0.3vh', marginRight:'1vw'}}/>
-              ) : (
-                <button><a href={project.link} target='_blank'>View <IoOpenOutline style={{marginBottom:'-0.3vh'}}/></a></button>
-              )}
-              {project.github === "private" ? (
-                <FaLock style={{marginBottom:'-0.5vh'}}/>
-              ) : (
-                <a href={project.github} target='_blank'><PiGithubLogoFill style={{marginBottom:'-0.5vh'}}/></a>
-              )}
+              <p className='year'>{project.type}</p>
+              <p className='project-description'>{project.description}</p>
+              <div className='project-links'>
+                {project.link === "none" ? (
+                  <i className="hn hn-eye-cross-solid" style={{ marginBottom: '-0.3vh' }}></i>
+                ) : (
+                  <button><a href={project.link} target='_blank' rel='noreferrer'>view <i className="hn hn-external-link-solid" style={{ marginBottom: '-0.3vh' }}></i></a></button>
+                )}
+                {project.github === "private" ? (
+                  <FaLock style={{ marginBottom: '-0.5vh' }} />
+                ) : (
+                  <button><a href={project.github} target='_blank' rel='noreferrer'>see code <i className="hn hn-github" style={{ marginBottom: '-0.5vh' }}></i></a></button>
+                )}
               </div>
+            </div>
           </div>
         ))}
       </div>
       {showMore && projectsToShow < myProjects.length ? (
         <div className='btn'>
-          <button className="clickable-element" id='underlined-element' onClick={handleSeeMore}>
-            <h2>See more</h2>
+          <button className="clickable-element" onClick={handleSeeMore}>
+            <h2>see more</h2>
           </button>
         </div>
       ) : (
         <div className='btn'>
-          <button className="clickable-element" id='underlined-element' onClick={handleHide}>
+          <button className="clickable-element" onClick={handleHide}>
             <h2>Hide</h2>
           </button>
         </div>
       )}
+    </section>
+  );
+}
+
+//work//
+
+const myWork = [
+  {
+    company: "COGNIRA",
+    role: "Data Systems Intern",
+    time: "July 2026 - Feb 2026",
+    description: "Designed and built a graph based calculation & analysis engine for QA"
+  },
+  {
+    company: "HI INTERNS",
+    role: "AI & Automation Intern",
+    time: "July 2025 - Oct 2025",
+    description: "Built an automated content curation system"
+  }
+]
+
+function Work() {
+  return (
+    <section id="work" className="section">
+      <h3 id="title">work.</h3>
+      <div className="project-cards work-cards">
+        {myWork.map((work, index) => (
+          <article className='work-card' key={index}>
+            <div className='work-card-header'>
+              <p className='company'>{work.company}</p>
+              <span className='work-time'>{work.time}</span>
+            </div>
+            <p className='work-role'>{work.role}</p>
+            <p className='work-description'>{work.description}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -256,7 +286,7 @@ const myStacks = [
   {
     name: "Flask",
     icon: <SiFlask />,
-    color: "#FFFFFF"
+    color: "#e0e0e0"
   },
   {
     name: "React",
@@ -270,7 +300,7 @@ const myStacks = [
   },
   {
     name: "SQL",
-    icon: <SiMysql  />,
+    icon: <SiMysql />,
     color: "#9ddbed"
   },
   {
@@ -305,7 +335,7 @@ const myStacks = [
   },
   {
     name: "Kotlin",
-    icon: <SiKotlin  />,
+    icon: <SiKotlin />,
     color: "#dd9ae3"
   }
 ]
@@ -313,11 +343,11 @@ const myStacks = [
 function Stacks() {
   return (
     <section id='stacks' className='section'>
-      <h3>Tech stack</h3>
+      <h3>tech stack.</h3>
       <div className='icons'>
         {myStacks.map(function (item) {
           return (
-            <div key={item.index} style={{ backgroundColor: item.color }} className='icon'>
+            <div key={item.index} style={{ borderColor: item.color }} className='icon'>
               {item.icon}
               {item.name}
             </div>);
@@ -332,7 +362,7 @@ function Stacks() {
 function Contact() {
   return (
     <section id="contact" className="section">
-      <h3 id="title">Contact me</h3>
+      <h3 id="title">contact.</h3>
       <h1 id="paragraph">If you want to get in touch, you can <span id="underlined-element" className="clickable-element"><a href="mailto:youssefechadysfaxi@gmail.com">email
         me</a></span> or visit <span id="underlined-element" className="clickable-element"><a
           href="https://www.linkedin.com/in/youssef-sfexi-b8758b26a/" target="_blank">my Linkedin</a></span>.
@@ -365,7 +395,7 @@ function Footer() {
     <footer className="section">
       <div className="footer">
         <div>
-          <h3>Made with &#128151;</h3>
+          <h3>made with <i className="hn hn-heart-solid" style={{ color: '#ff36f2' }}></i></h3>
         </div>
         <div className="clickable-element">
           <a href="#profile">
@@ -379,7 +409,7 @@ function Footer() {
 
 function App() {
 
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const toggleTheme = () => {
     setIsDark(prev => !prev);
   };
@@ -387,12 +417,13 @@ function App() {
   return (
     <div data-theme={isDark ? "dark" : "light"} className='app'>
       <Cursor />
-      <Nav toggleTheme={toggleTheme} />
-        <Profile />
-        <Projects />
-        <Stacks />
-        <Contact />
-        <Footer />
+      <Nav toggleTheme={toggleTheme} isDark={isDark} />
+      <Profile />
+      <Projects />
+      <Work />
+      <Stacks />
+      <Contact />
+      <Footer />
     </div>
   )
 }

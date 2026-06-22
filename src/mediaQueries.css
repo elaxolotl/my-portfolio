@@ -45,6 +45,19 @@
         }
     }
 
+    #work {
+        margin: 0vh 10vh 0vh 10vh !important;
+
+        .work-card {
+            padding: 2.5vh 4vw !important;
+        }
+
+        .work-card-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
     #stacks {
         margin: 7vh 10vh 10vh 10vh !important;
         overflow: hidden;
