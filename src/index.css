@@ -112,9 +112,9 @@ a {
 
   img {
     width: auto;
-    height: 7vh;
+    height: 9vh;
     clip-path: circle();
-    margin: 0vh 0.7vh -0.5vh 0.7vh;
+    margin: 0vh 1vh -2vh 1vh;
     transition: 0.3s;
     z-index: 999;
   }
