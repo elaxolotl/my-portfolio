@@ -1,8 +1,8 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5 } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiFlask, SiR, SiKotlin } from "react-icons/si";
+import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5, FaNodeJs } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill, RiOpenaiFill } from "react-icons/ri";
+import { SiFlask, SiR, SiKotlin, SiPrisma, SiPostgresql } from "react-icons/si";
 import React, { useState } from "react";
 import AnimatedCursor from "react-animated-cursor";
 import { SiMysql } from "react-icons/si";
@@ -86,6 +86,18 @@ function minutes(i) {
 };
 
 function Profile() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("youssefechadysfaxi@gmail.com");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (error) {
+      console.error("Failed to copy email:", error);
+    }
+  };
+
   return (
     <section id="profile" className="section">
       <div className="section">
@@ -98,7 +110,16 @@ function Profile() {
             <img className="profile-image" src="/tbs.jpg" alt='picture of Tunis Business School'></img>
           </span>
         </h1>
-        <button className='profile-contact'><a href='mailto: youssefechadysfaxi@gmail.com'>Say hello </a><i class="hn hn-comment-dots-solid"></i></button>
+        <div className="profile-contact-links">
+          <a className="profile-contact-pill clickable-element" href="https://github.com/elaxolotl" target="_blank" rel="noreferrer">
+            <span className="contact-label">github</span>
+            <span className="contact-value">@elaxolotl</span>
+          </a>
+          <button type="button" className="profile-contact-pill clickable-element" onClick={copyEmail}>
+            <span className="contact-label">email</span>
+            <span className="contact-value">{copied ? "copied!" : "youssefechadysfaxi [at] gmail (dot) com"}</span>
+          </button>
+        </div>
       </div>
       <div className="time">
         <div className="arrow"><a href='#projects'><FaArrowDown /></a></div>
@@ -245,13 +266,15 @@ const myWork = [
     company: "COGNIRA",
     role: "Data Systems Intern",
     time: "July 2026 - Feb 2026",
-    description: "Designed and built a graph based calculation & analysis engine for QA"
+    description: "Designed and built a graph based calculation & analysis engine for QA",
+    tech: ["Node.js", "JsonLogic", "Prisma", "PostgreSQL", "React", "Next.js", "Material UI", "D3.js"]
   },
   {
     company: "HI INTERNS",
     role: "AI & Automation Intern",
     time: "July 2025 - Oct 2025",
-    description: "Built an automated content curation system"
+    description: "Built an automated content curation system",
+    tech: ["Node.js", "Mastra", "OpenAI", "NLP", "RAG"]
   }
 ]
 
@@ -268,6 +291,23 @@ function Work() {
             </div>
             <p className='work-role'>{work.role}</p>
             <p className='work-description'>{work.description}</p>
+            <div className='work-tech'>
+              {work.tech.map((techItem, techIndex) => {
+                const stack = techStackMap[techItem];
+                return (
+                  <span
+                    className='tech-pill'
+                    key={techIndex}
+                    style={{
+                      borderColor: stack?.color || 'var(--bg2)',
+                    }}
+                  >
+                    {stack?.icon ? <span className='tech-icon'>{stack.icon}</span> : null}
+                    {techItem}
+                  </span>
+                );
+              })}
+            </div>
           </article>
         ))}
       </div>
@@ -314,16 +354,6 @@ const myStacks = [
     color: "#81a7d6"
   },
   {
-    name: "HTML5",
-    icon: <FaHtml5 />,
-    color: "#f7baab"
-  },
-  {
-    name: "CSS3",
-    icon: <FaCss3Alt />,
-    color: "#a5b5f0"
-  },
-  {
     name: "Next.js",
     icon: <RiNextjsFill />,
     color: "#cccccc"
@@ -334,28 +364,61 @@ const myStacks = [
     color: "#b6f0ed"
   },
   {
-    name: "Kotlin",
-    icon: <SiKotlin />,
-    color: "#dd9ae3"
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    color: "#68a063"
+  },
+  {
+    name: "D3.js",
+    icon: "",
+    color: "#F89C42"
+  },
+  {
+    name: "Material UI",
+    icon: "",
+    color: "#0079F5"
+  },
+  {
+    name: "JsonLogic",
+    icon: "",
+    color: "#3076C9"
+  },
+  {
+    name: "Prisma",
+    icon: <SiPrisma />,
+    color: "#14B8A6"
+  },
+  {
+    name: "Mastra",
+    icon: "",
+    color: "#e0e0e0"
+  },
+  {
+    name: "OpenAI",
+    icon: <RiOpenaiFill />,
+    color: "#343434"
+  },
+  {
+    name: "NLP",
+    icon: "",
+    color: "#e0e0e0"
+  },
+  {
+    name: "RAG",
+    icon: "",
+    color: "#e0e0e0"
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql />,
+    color: "#31648C"
   }
 ]
 
-function Stacks() {
-  return (
-    <section id='stacks' className='section'>
-      <h3>tech stack.</h3>
-      <div className='icons'>
-        {myStacks.map(function (item) {
-          return (
-            <div key={item.index} style={{ borderColor: item.color }} className='icon'>
-              {item.icon}
-              {item.name}
-            </div>);
-        })}
-      </div>
-    </section>
-  );
-}
+const techStackMap = myStacks.reduce((map, item) => {
+  map[item.name] = item;
+  return map;
+}, {});
 
 //contact//
 
@@ -395,7 +458,7 @@ function Footer() {
     <footer className="section">
       <div className="footer">
         <div>
-          <h3>made with <i className="hn hn-heart-solid" style={{ color: '#ff36f2' }}></i></h3>
+          <h3>made with <i className="hn hn-heart-solid" style={{ color: '#FF0000' }}></i></h3>
         </div>
         <div className="clickable-element">
           <a href="#profile">
@@ -421,7 +484,6 @@ function App() {
       <Profile />
       <Projects />
       <Work />
-      <Stacks />
       <Contact />
       <Footer />
     </div>
