@@ -1,6 +1,6 @@
 import './mediaQueries.css';
 //icons
-import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5, FaNodeJs } from "react-icons/fa";
+import { FaLinkedin, FaReact, FaFacebookSquare, FaArrowUp, FaJava, FaPython, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill, RiOpenaiFill } from "react-icons/ri";
 import { SiFlask, SiR, SiKotlin, SiPrisma, SiPostgresql } from "react-icons/si";
 import React, { useState } from "react";
@@ -13,6 +13,7 @@ import { IoIosMail } from "react-icons/io";
 import { FaArrowDown, FaLock } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 import { TbSend } from "react-icons/tb";
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 //cursor//
 function Cursor() {
@@ -264,17 +265,24 @@ function Projects() {
 const myWork = [
   {
     company: "COGNIRA",
-    role: "Data Systems Intern",
+    role: "Data Validation Intern",
     time: "July 2026 - Feb 2026",
     description: "Designed and built a graph based calculation & analysis engine for QA",
     tech: ["Node.js", "JsonLogic", "Prisma", "PostgreSQL", "React", "Next.js", "Material UI", "D3.js"]
   },
   {
     company: "HI INTERNS",
-    role: "AI & Automation Intern",
+    role: "Data Automation Intern",
     time: "July 2025 - Oct 2025",
     description: "Built an automated content curation system",
     tech: ["Node.js", "Mastra", "OpenAI", "NLP", "RAG"]
+  },
+  {
+    company: "THE MASHROOM",
+    role: "Frontend Intern",
+    time: "Aug 2024 - Sep 2024",
+    description: "Ran SEO audits & created responsive UI components",
+    tech: ["React", "Figma"]
   }
 ]
 
@@ -412,6 +420,11 @@ const myStacks = [
     name: "PostgreSQL",
     icon: <SiPostgresql />,
     color: "#31648C"
+  },
+  {
+    name: "Figma",
+    icon: <FaFigma />,
+    color: "#ff3737"
   }
 ]
 
